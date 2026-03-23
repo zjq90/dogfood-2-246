@@ -2,7 +2,7 @@ package com.weibo.controller;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Article;
+import com.weibo.model.Article;
 import com.weibo.service.ArticleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

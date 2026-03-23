@@ -2,7 +2,7 @@ package com.weibo.service;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Friend;
+import com.weibo.model.Friend;
 import java.util.List;
 
 /**

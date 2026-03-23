@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.User;
+import com.weibo.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -74,10 +74,12 @@ public interface UserMapper {
     /**
      * 更新找回密码凭证和过期时间
      * 
-     * @param user 用户对象
+     * @param username 用户名
+     * @param code 凭证码
+     * @param outTime 过期时间
      * @return 影响行数
      */
-    int updateCodeAndOutTime(User user);
+    int updateResetCode(@Param("username") String username, @Param("code") Integer code, @Param("outTime") java.util.Date outTime);
 
     /**
      * 根据找回密码凭证查询用户
@@ -85,7 +87,7 @@ public interface UserMapper {
      * @param code 凭证码
      * @return 用户对象
      */
-    User selectByCode(@Param("code") Integer code);
+    User selectByResetCode(@Param("code") Integer code);
 
     /**
      * 更新用户密码
@@ -107,9 +109,11 @@ public interface UserMapper {
      * 根据关键词搜索用户
      * 
      * @param keyword 关键词（用户名/昵称）
+     * @param offset 偏移量
+     * @param pageSize 每页条数
      * @return 用户列表
      */
-    List<User> searchUsers(@Param("keyword") String keyword);
+    List<User> searchUsers(@Param("keyword") String keyword, @Param("offset") Integer offset, @Param("pageSize") Integer pageSize);
 
     /**
      * 更新用户状态（封禁/解封）

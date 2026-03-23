@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.Friend;
+import com.weibo.model.Friend;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -68,12 +68,22 @@ public interface FriendMapper {
                           @Param("toUserId") Integer toUserId);
 
     /**
+     * 根据用户ID查询关系
+     * 
+     * @param fromUserId 当前用户ID
+     * @param toUserId 目标用户ID
+     * @return 好友关系对象
+     */
+    Friend selectByUserIds(@Param("fromUserId") Integer fromUserId,
+                          @Param("toUserId") Integer toUserId);
+
+    /**
      * 新增关注关系
      * 
      * @param friend 好友关系对象
      * @return 影响行数
      */
-    int insertFriend(Friend friend);
+    int insert(Friend friend);
 
     /**
      * 更新好友关系状态
@@ -84,6 +94,15 @@ public interface FriendMapper {
     int updateFriendStatus(Friend friend);
 
     /**
+     * 更新好友关系状态
+     * 
+     * @param friendId 关系ID
+     * @param status 状态
+     * @return 影响行数
+     */
+    int updateStatus(@Param("friendId") Integer friendId, @Param("status") Integer status);
+
+    /**
      * 删除好友关系（取消关注）
      * 
      * @param fromUserId 当前用户ID
@@ -92,6 +111,14 @@ public interface FriendMapper {
      */
     int deleteFriend(@Param("fromUserId") Integer fromUserId,
                      @Param("toUserId") Integer toUserId);
+
+    /**
+     * 根据ID删除好友关系
+     * 
+     * @param friendId 关系ID
+     * @return 影响行数
+     */
+    int delete(@Param("friendId") Integer friendId);
 
     /**
      * 查询关注数

@@ -1,7 +1,7 @@
 package com.weibo.service;
 
 import com.weibo.dto.Result;
-import com.weibo.entity.User;
+import com.weibo.model.User;
 import java.util.List;
 
 /**

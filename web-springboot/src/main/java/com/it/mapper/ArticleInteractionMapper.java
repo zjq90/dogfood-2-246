@@ -1,9 +1,7 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.ArticleCollection;
-import com.weibo.entity.ArticleComment;
-import com.weibo.entity.ArticleReply;
-import com.weibo.entity.ArticleStar;
+import com.weibo.model.ArticleComment;
+import com.weibo.model.ArticleReply;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -85,78 +83,76 @@ public interface ArticleInteractionMapper {
     // ==================== 点赞相关 ====================
     
     /**
-     * 查询点赞记录
+     * 检查用户是否点赞文章
      * 
      * @param userId 用户ID
-     * @param typeId 对象ID
-     * @param type 对象类型：1-文章；2-评论；3-回复
-     * @return 点赞对象
+     * @param articleId 文章ID
+     * @return 数量
      */
-    ArticleStar selectStar(@Param("userId") Integer userId,
-                           @Param("typeId") Integer typeId,
-                           @Param("type") Integer type);
+    int checkArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     /**
-     * 新增点赞
+     * 插入文章点赞记录
      * 
-     * @param star 点赞对象
+     * @param userId 用户ID
+     * @param articleId 文章ID
      * @return 影响行数
      */
-    int insertStar(ArticleStar star);
+    int insertArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     /**
-     * 取消点赞
+     * 删除文章点赞记录
      * 
-     * @param starId 点赞ID
+     * @param userId 用户ID
+     * @param articleId 文章ID
      * @return 影响行数
      */
-    int deleteStar(@Param("starId") Integer starId);
+    int deleteArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 检查用户是否转发文章
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 数量
+     */
+    int checkArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 插入文章转发记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int insertArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     // ==================== 收藏相关 ====================
     
     /**
-     * 查询用户收藏的文章列表
-     * 
-     * @param userId 用户ID
-     * @param offset 偏移量
-     * @param pageSize 每页条数
-     * @return 收藏列表
-     */
-    List<ArticleCollection> selectCollectionList(@Param("userId") Integer userId,
-                                                 @Param("offset") Integer offset,
-                                                 @Param("pageSize") Integer pageSize);
-
-    /**
-     * 查询用户收藏数
-     * 
-     * @param userId 用户ID
-     * @return 收藏数
-     */
-    Long selectCollectionCount(@Param("userId") Integer userId);
-
-    /**
-     * 查询收藏记录
+     * 检查用户是否收藏文章
      * 
      * @param userId 用户ID
      * @param articleId 文章ID
-     * @return 收藏对象
+     * @return 数量
      */
-    ArticleCollection selectCollection(@Param("userId") Integer userId,
-                                       @Param("articleId") Integer articleId);
+    int checkArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     /**
-     * 新增收藏
+     * 插入文章收藏记录
      * 
-     * @param collection 收藏对象
+     * @param userId 用户ID
+     * @param articleId 文章ID
      * @return 影响行数
      */
-    int insertCollection(ArticleCollection collection);
+    int insertArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     /**
-     * 取消收藏
+     * 删除文章收藏记录
      * 
-     * @param collectionId 收藏ID
+     * @param userId 用户ID
+     * @param articleId 文章ID
      * @return 影响行数
      */
-    int deleteCollection(@Param("collectionId") Integer collectionId);
+    int deleteArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 }

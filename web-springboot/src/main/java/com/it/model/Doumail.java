@@ -52,13 +52,13 @@ public class Doumail implements Serializable {
     /**
      * 聊天内容
      */
-    private String chatMsg;
+    private String content;
 
     /**
      * 聊天时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date chatTime;
+    private Date sendTime;
 
     /**
      * 删除状态(0-双方都未删除, 1-发送者删除, 2-接收者删除)
@@ -68,5 +68,5 @@ public class Doumail implements Serializable {
     /**
      * 阅读状态(0-未读, 1-已读)
      */
-    private Integer read;
+    private Integer isRead;
 }

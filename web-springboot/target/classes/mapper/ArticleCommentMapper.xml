@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weibo.mapper.ArticleCommentMapper">
+
+    <resultMap id="CommentResultMap" type="com.weibo.model.ArticleComment">
+        <id column="comment_id" property="commentId"/>
+        <result column="article_id" property="articleId"/>
+        <result column="c_msg" property="comMsg"/>
+        <result column="user_id" property="userComId"/>
+        <result column="c_star" property="comStar"/>
+        <result column="c_time" property="comTime"/>
+    </resultMap>
+
+    <resultMap id="ReplyResultMap" type="com.weibo.model.ArticleReply">
+        <id column="reply_id" property="replyId"/>
+        <result column="comment_id" property="commentId"/>
+        <result column="reply_msg" property="replyMsg"/>
+        <result column="from_user_id" property="userReplyFromId"/>
+        <result column="to_user_id" property="userReplyToId"/>
+        <result column="r_star" property="replyStar"/>
+        <result column="reply_time" property="replyTime"/>
+    </resultMap>
+
+    <select id="selectByArticleId" resultMap="CommentResultMap">
+        SELECT c.comment_id, c.article_id, c.c_msg, c.user_id, c.c_star, c.c_time,
+               u.nickname as user_com_nick, u.portrait as user_com_img
+        FROM a_comment c
+        LEFT JOIN user u ON c.user_id = u.user_id
+        WHERE c.article_id = #{articleId}
+        ORDER BY c.c_time DESC
+    </select>
+
+    <insert id="insert" parameterType="com.weibo.model.ArticleComment" useGeneratedKeys="true" keyProperty="commentId">
+        INSERT INTO a_comment (article_id, c_msg, user_id, c_star, c_time)
+        VALUES (#{articleId}, #{comMsg}, #{userComId}, 0, NOW())
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM a_comment WHERE comment_id = #{commentId}
+    </delete>
+
+    <update id="updateStarNum">
+        UPDATE a_comment SET c_star = c_star + #{num} WHERE comment_id = #{commentId}
+    </update>
+
+    <select id="selectReplyByCommentId" resultMap="ReplyResultMap">
+        SELECT r.reply_id, r.comment_id, r.reply_msg, r.from_user_id, r.to_user_id,
+               r.r_star, r.reply_time,
+               u1.nickname as user_reply_from_nick, u1.portrait as user_reply_img,
+               u2.nickname as user_reply_to_nick
+        FROM a_reply r
+        LEFT JOIN user u1 ON r.from_user_id = u1.user_id
+        LEFT JOIN user u2 ON r.to_user_id = u2.user_id
+        WHERE r.comment_id = #{commentId}
+        ORDER BY r.reply_time ASC
+    </select>
+
+    <insert id="insertReply" parameterType="com.weibo.model.ArticleReply" useGeneratedKeys="true" keyProperty="replyId">
+        INSERT INTO a_reply (comment_id, reply_msg, from_user_id, to_user_id, r_star, reply_time)
+        VALUES (#{commentId}, #{replyMsg}, #{userReplyFromId}, #{userReplyToId}, 0, NOW())
+    </insert>
+
+    <delete id="deleteReply">
+        DELETE FROM a_reply WHERE reply_id = #{replyId}
+    </delete>
+
+    <update id="updateReplyStarNum">
+        UPDATE a_reply SET r_star = r_star + #{num} WHERE reply_id = #{replyId}
+    </update>
+
+    <select id="checkCommentStar" resultType="int">
+        SELECT COUNT(*) FROM a_star WHERE user_id = #{userId} AND type_id = #{commentId} AND type = 2
+    </select>
+
+    <insert id="insertCommentStar">
+        INSERT INTO a_star (type_id, type, user_id) VALUES (#{commentId}, 2, #{userId})
+    </insert>
+
+    <delete id="deleteCommentStar">
+        DELETE FROM a_star WHERE user_id = #{userId} AND type_id = #{commentId} AND type = 2
+    </delete>
+
+</mapper>

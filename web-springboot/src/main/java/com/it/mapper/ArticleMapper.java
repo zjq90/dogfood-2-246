@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.Article;
+import com.weibo.model.Article;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -73,12 +73,28 @@ public interface ArticleMapper {
     int insertArticle(Article article);
 
     /**
+     * 新增文章（简化版）
+     * 
+     * @param article 文章对象
+     * @return 影响行数
+     */
+    int insert(Article article);
+
+    /**
      * 更新文章
      * 
      * @param article 文章对象
      * @return 影响行数
      */
     int updateArticle(Article article);
+
+    /**
+     * 更新文章（简化版）
+     * 
+     * @param article 文章对象
+     * @return 影响行数
+     */
+    int update(Article article);
 
     /**
      * 删除文章
@@ -89,12 +105,64 @@ public interface ArticleMapper {
     int deleteById(@Param("articleId") Integer articleId);
 
     /**
+     * 删除文章（简化版）
+     * 
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int delete(@Param("articleId") Integer articleId);
+
+    /**
      * 增加文章浏览量
      * 
      * @param articleId 文章ID
      * @return 影响行数
      */
     int incrementPageView(@Param("articleId") Integer articleId);
+
+    /**
+     * 更新文章浏览量
+     * 
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int updatePageView(@Param("articleId") Integer articleId);
+
+    /**
+     * 更新点赞数
+     * 
+     * @param articleId 文章ID
+     * @param num 增量
+     * @return 影响行数
+     */
+    int updateStarNum(@Param("articleId") Integer articleId, @Param("num") Integer num);
+
+    /**
+     * 更新收藏数
+     * 
+     * @param articleId 文章ID
+     * @param num 增量
+     * @return 影响行数
+     */
+    int updateCollectionNum(@Param("articleId") Integer articleId, @Param("num") Integer num);
+
+    /**
+     * 更新评论数
+     * 
+     * @param articleId 文章ID
+     * @param num 增量
+     * @return 影响行数
+     */
+    int updateCommentNum(@Param("articleId") Integer articleId, @Param("num") Integer num);
+
+    /**
+     * 更新转发数
+     * 
+     * @param articleId 文章ID
+     * @param num 增量
+     * @return 影响行数
+     */
+    int updateShareNum(@Param("articleId") Integer articleId, @Param("num") Integer num);
 
     /**
      * 更新文章统计数据（点赞、收藏、评论、转发数）

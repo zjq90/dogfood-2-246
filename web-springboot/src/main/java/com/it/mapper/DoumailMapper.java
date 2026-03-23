@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.Doumail;
+import com.weibo.model.Doumail;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -68,6 +68,22 @@ public interface DoumailMapper {
     int deleteDoumail(@Param("doumailId") Integer doumailId,
                       @Param("userId") Integer userId,
                       @Param("status") Integer status);
+
+    /**
+     * 根据ID删除豆邮
+     * 
+     * @param doumailId 豆邮ID
+     * @return 影响行数
+     */
+    int delete(@Param("doumailId") Integer doumailId);
+
+    /**
+     * 根据ID查询豆邮
+     * 
+     * @param doumailId 豆邮ID
+     * @return 豆邮对象
+     */
+    Doumail selectById(@Param("doumailId") Integer doumailId);
 
     /**
      * 查询未读豆邮数

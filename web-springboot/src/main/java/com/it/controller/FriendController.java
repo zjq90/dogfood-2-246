@@ -2,7 +2,7 @@ package com.weibo.controller;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Friend;
+import com.weibo.model.Friend;
 import com.weibo.service.FriendService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

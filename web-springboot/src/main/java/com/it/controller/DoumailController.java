@@ -2,7 +2,7 @@ package com.weibo.controller;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Doumail;
+import com.weibo.model.Doumail;
 import com.weibo.service.DoumailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
