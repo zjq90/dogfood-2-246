@@ -1,0 +1,22 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.weibo:weibo-springboot >---------------------
+[INFO] Building weibo Spring Boot 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ weibo-springboot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 23 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ weibo-springboot ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 43 source files to D:\Aijava\javaproject\260319\dogfood-2-246\seed\web-springboot\target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.510 s
+[INFO] Finished at: 2026-03-23T12:36:21+08:00
+[INFO] ------------------------------------------------------------------------

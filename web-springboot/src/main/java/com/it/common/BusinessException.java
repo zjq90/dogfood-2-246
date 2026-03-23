@@ -1,8 +1,6 @@
-package com.weibo.common;
+package com.it.common;
 
-/**
- * 业务异常类
- */
+
 public class BusinessException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;

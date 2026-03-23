@@ -1,9 +1,9 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.dto.PageResult;
-import com.weibo.dto.Result;
-import com.weibo.entity.Doumail;
-import com.weibo.service.DoumailService;
+import com.it.common.PageResult;
+import com.it.common.Result;
+import com.it.model.Doumail;
+import com.it.service.DoumailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-/**
- * 豆邮控制器
- * 处理豆邮发送、接收等功能
- * 
- * @author weibo Team
- */
 @Controller
 @RequestMapping("/doumail")
 public class DoumailController {
@@ -29,9 +23,6 @@ public class DoumailController {
     @Autowired
     private DoumailService doumailService;
 
-    /**
-     * 获取会话列表
-     */
     @GetMapping("/conversation/list")
     @ResponseBody
     public Result<PageResult<Doumail>> getConversationList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -40,15 +31,12 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "Please login first");
         }
 
         return doumailService.getConversationList(userId, pageNum, pageSize);
     }
 
-    /**
-     * 获取与指定用户的豆邮详情
-     */
     @GetMapping("/detail/{targetUserId}")
     @ResponseBody
     public Result<PageResult<Doumail>> getDoumailDetail(@PathVariable("targetUserId") Integer targetUserId,
@@ -58,18 +46,14 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "Please login first");
         }
 
-        // 标记为已读
         doumailService.markAsRead(targetUserId, userId);
 
         return doumailService.getDoumailDetail(userId, targetUserId, pageNum, pageSize);
     }
 
-    /**
-     * 发送豆邮
-     */
     @PostMapping("/send")
     @ResponseBody
     public Result<Doumail> sendDoumail(@RequestParam("toUserId") Integer toUserId,
@@ -78,11 +62,11 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "Please login first");
         }
 
         if (content == null || content.trim().isEmpty()) {
-            return Result.fail("内容不能为空");
+            return Result.error("Content cannot be empty");
         }
 
         Doumail doumail = new Doumail();
@@ -93,9 +77,6 @@ public class DoumailController {
         return doumailService.sendDoumail(doumail);
     }
 
-    /**
-     * 删除豆邮
-     */
     @PostMapping("/delete/{doumailId}")
     @ResponseBody
     public Result<Boolean> deleteDoumail(@PathVariable("doumailId") Integer doumailId,
@@ -103,15 +84,12 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "Please login first");
         }
 
         return doumailService.deleteDoumail(doumailId, userId);
     }
 
-    /**
-     * 获取未读豆邮数
-     */
     @GetMapping("/unread/count")
     @ResponseBody
     public Result<Integer> getUnreadCount(HttpServletRequest request) {

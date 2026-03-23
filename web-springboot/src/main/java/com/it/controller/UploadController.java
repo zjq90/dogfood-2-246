@@ -1,85 +1,80 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.common.Result;
-import com.weibo.model.User;
+import com.it.common.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.UUID;
 
-/**
- * 文件上传控制器
- */
 @Slf4j
 @RestController
 @RequestMapping("/api/upload")
 public class UploadController {
 
-    @Value("${weibo.upload.path:/upload/}")
+    @Value("${upload.path}")
     private String uploadPath;
 
-    @Value("${weibo.image.base-url:http://localhost:8080/upload/}")
-    private String imageBaseUrl;
+    @Value("${upload.url}")
+    private String uploadUrl;
 
-    /**
-     * 上传图片
-     */
     @PostMapping("/image")
-    public Result<Map<String, String>> uploadImage(@RequestParam("photo") MultipartFile file, HttpSession session) {
-        log.info("上传图片请求");
-        
-        if (file.isEmpty()) {
-            return Result.error("请选择文件");
+    public Result<String> uploadImage(MultipartFile file, HttpSession session) {
+        log.info("upload image");
+        if (session.getAttribute("userInfo") == null) {
+            return Result.error("Not logged in");
         }
-        
-        String originalFilename = file.getOriginalFilename();
-        if (originalFilename == null || originalFilename.isEmpty()) {
-            return Result.error("文件名无效");
+        if (file == null || file.isEmpty()) {
+            return Result.error("File is empty");
         }
-        
-        String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-        String newFileName = generateFileName() + suffix;
-        
-        String realPath = session.getServletContext().getRealPath(uploadPath);
-        File dir = new File(realPath);
-        if (!dir.exists()) {
-            dir.mkdirs();
+        String fileName = file.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf("."));
+        String newFileName = UUID.randomUUID().toString() + suffix;
+        File dest = new File(uploadPath + newFileName);
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
         }
-        
-        File destFile = new File(realPath + File.separator + newFileName);
         try {
-            file.transferTo(destFile);
-            log.info("文件上传成功: {}", destFile.getAbsolutePath());
+            file.transferTo(dest);
+            String url = uploadUrl + newFileName;
+            log.info("upload success, url: {}", url);
+            return Result.success("Upload success", url);
         } catch (IOException e) {
-            log.error("文件上传失败", e);
-            return Result.error("文件上传失败");
+            log.error("upload failed", e);
+            return Result.error("Upload failed");
         }
-        
-        String imageUrl = imageBaseUrl + newFileName;
-        Map<String, String> result = new HashMap<>();
-        result.put("fileName", newFileName);
-        result.put("imageUrl", imageUrl);
-        
-        return Result.success("上传成功", result);
     }
 
-    /**
-     * 生成文件名
-     */
-    private String generateFileName() {
-        DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-        String formatDate = format.format(new Date());
-        int random = new Random().nextInt(10000);
-        return formatDate + random;
+    @PostMapping("/avatar")
+    public Result<String> uploadAvatar(MultipartFile file, HttpSession session) {
+        log.info("upload avatar");
+        if (session.getAttribute("userInfo") == null) {
+            return Result.error("Not logged in");
+        }
+        if (file == null || file.isEmpty()) {
+            return Result.error("File is empty");
+        }
+        String fileName = file.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf("."));
+        String newFileName = "avatar_" + UUID.randomUUID().toString() + suffix;
+        File dest = new File(uploadPath + "avatar/" + newFileName);
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            file.transferTo(dest);
+            String url = uploadUrl + "avatar/" + newFileName;
+            log.info("upload avatar success, url: {}", url);
+            return Result.success("Upload success", url);
+        } catch (IOException e) {
+            log.error("upload avatar failed", e);
+            return Result.error("Upload failed");
+        }
     }
 }

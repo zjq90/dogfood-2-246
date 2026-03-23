@@ -1,41 +1,28 @@
-package com.weibo.model;
+package com.it.model;
 
 import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * 分页实体类
- * 用于封装分页数据
- */
+
 @Data
 public class Page<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 总页数
-     */
+    
     private Integer totalPage;
 
-    /**
-     * 每页显示数量
-     */
+    
     private Integer pageSize;
 
-    /**
-     * 总记录数
-     */
+    
     private Integer totalCount;
 
-    /**
-     * 当前页
-     */
+    
     private Integer currentPage;
 
-    /**
-     * 当前页数据集合
-     */
+    
     private List<T> objects;
 
     public Page() {

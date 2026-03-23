@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weibo.mapper.ArticleMapper">
+<mapper namespace="com.it.mapper.ArticleMapper">
 
-    <resultMap id="ArticleResultMap" type="com.weibo.model.Article">
+    <resultMap id="ArticleResultMap" type="com.it.model.Article">
         <id column="article_id" property="articleId"/>
         <result column="title" property="title"/>
         <result column="tag_name" property="tagName"/>
@@ -18,38 +18,58 @@
         <result column="stick" property="stick"/>
     </resultMap>
 
-    <resultMap id="ArticleListResultMap" type="com.weibo.model.ArticleList">
-        <id column="article_id" property="articleId"/>
-        <result column="title" property="title"/>
-        <result column="published_time" property="publishedTime"/>
-        <result column="tag_name" property="tagName"/>
-        <result column="author" property="authorId"/>
-        <result column="share" property="shareNum"/>
-        <result column="star" property="starNum"/>
-        <result column="comment" property="commentNum"/>
-        <result column="collection" property="collectionNum"/>
-        <result column="content" property="content"/>
-        <result column="stick" property="stick"/>
-        <result column="page_view" property="pageView"/>
-    </resultMap>
-
     <sql id="Base_Column_List">
         article_id, title, tag_name, author, published_time, tag_id, content,
         star, collection, comment, share, page_view, stick
     </sql>
 
-    <select id="selectByArticleId" resultMap="ArticleResultMap">
+    <select id="selectById" resultMap="ArticleResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM a_article
         WHERE article_id = #{articleId}
     </select>
 
-    <insert id="insert" parameterType="com.weibo.model.Article" useGeneratedKeys="true" keyProperty="articleId">
-        INSERT INTO a_article (title, tag_name, author, published_time, tag_id, content, stick)
-        VALUES (#{title}, #{tagName}, #{authorId}, NOW(), #{tagId}, #{content}, 0)
+    <select id="selectArticleList" resultMap="ArticleResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM a_article
+        <where>
+            <if test="tagId != null">AND tag_id = #{tagId}</if>
+            <if test="keyword != null and keyword != ''">
+                AND (title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+        ORDER BY stick DESC, published_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectArticleCount" resultType="long">
+        SELECT COUNT(*) FROM a_article
+        <where>
+            <if test="tagId != null">AND tag_id = #{tagId}</if>
+            <if test="keyword != null and keyword != ''">
+                AND (title LIKE CONCAT('%', #{keyword}, '%') OR content LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByUserId" resultMap="ArticleResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM a_article
+        WHERE author = #{userId}
+        ORDER BY published_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectCountByUserId" resultType="long">
+        SELECT COUNT(*) FROM a_article WHERE author = #{userId}
+    </select>
+
+    <insert id="insertArticle" parameterType="com.it.model.Article" useGeneratedKeys="true" keyProperty="articleId">
+        INSERT INTO a_article (title, tag_name, author, published_time, tag_id, content, stick, star, collection, comment, share, page_view)
+        VALUES (#{title}, #{tagName}, #{authorId}, NOW(), #{tagId}, #{content}, 0, 0, 0, 0, 0, 0)
     </insert>
 
-    <update id="update" parameterType="com.weibo.model.Article">
+    <update id="updateArticle" parameterType="com.it.model.Article">
         UPDATE a_article
         <set>
             <if test="title != null">title = #{title},</if>
@@ -60,53 +80,45 @@
         WHERE article_id = #{articleId}
     </update>
 
-    <delete id="delete">
+    <delete id="deleteById">
         DELETE FROM a_article WHERE article_id = #{articleId}
     </delete>
 
-    <select id="selectArticleListByPage" resultMap="ArticleListResultMap">
-        SELECT a.article_id, a.title, a.published_time, a.tag_name, a.author,
-               a.share, a.star, a.comment, a.collection, 
-               SUBSTRING(a.content, 1, 200) as content, a.stick, a.page_view
-        FROM a_article a
-        ORDER BY a.stick DESC, a.published_time DESC
-        LIMIT #{offset}, #{pageSize}
-    </select>
+    <update id="incrementPageView">
+        UPDATE a_article SET page_view = page_view + 1 WHERE article_id = #{articleId}
+    </update>
 
-    <select id="selectArticleCount" resultType="int">
-        SELECT COUNT(*) FROM a_article
-    </select>
+    <update id="updateStats">
+        <choose>
+            <when test="type == 1">
+                UPDATE a_article SET star = star + #{increment} WHERE article_id = #{articleId}
+            </when>
+            <when test="type == 2">
+                UPDATE a_article SET collection = collection + #{increment} WHERE article_id = #{articleId}
+            </when>
+            <when test="type == 3">
+                UPDATE a_article SET comment = comment + #{increment} WHERE article_id = #{articleId}
+            </when>
+            <when test="type == 4">
+                UPDATE a_article SET share = share + #{increment} WHERE article_id = #{articleId}
+            </when>
+        </choose>
+    </update>
 
-    <select id="selectByAuthorId" resultMap="ArticleListResultMap">
-        SELECT article_id, title, published_time, tag_name, author,
-               share, star, comment, collection,
-               SUBSTRING(content, 1, 200) as content, stick, page_view
+    <select id="selectHotArticles" resultMap="ArticleResultMap">
+        SELECT <include refid="Base_Column_List"/>
         FROM a_article
-        WHERE author = #{authorId}
-        ORDER BY published_time DESC
-        LIMIT #{offset}, #{pageSize}
+        ORDER BY page_view DESC, published_time DESC
+        LIMIT #{limit}
     </select>
 
-    <select id="selectCountByAuthorId" resultType="int">
-        SELECT COUNT(*) FROM a_article WHERE author = #{authorId}
-    </select>
+    <insert id="insertArticleTag">
+        INSERT INTO a_article_tag (article_id, tag_id) VALUES (#{articleId}, #{tagId})
+    </insert>
 
-    <select id="selectSearchByPage" resultMap="ArticleListResultMap">
-        SELECT article_id, title, published_time, tag_name, author,
-               share, star, comment, collection,
-               SUBSTRING(content, 1, 200) as content, stick, page_view
-        FROM a_article
-        WHERE title LIKE CONCAT('%', #{searchContent}, '%')
-           OR content LIKE CONCAT('%', #{searchContent}, '%')
-        ORDER BY published_time DESC
-        LIMIT #{offset}, #{pageSize}
-    </select>
-
-    <select id="selectSearchCount" resultType="int">
-        SELECT COUNT(*) FROM a_article
-        WHERE title LIKE CONCAT('%', #{searchContent}, '%')
-           OR content LIKE CONCAT('%', #{searchContent}, '%')
-    </select>
+    <delete id="deleteArticleTags">
+        DELETE FROM a_article_tag WHERE article_id = #{articleId}
+    </delete>
 
     <update id="updateStarNum">
         UPDATE a_article SET star = star + #{num} WHERE article_id = #{articleId}
@@ -123,24 +135,5 @@
     <update id="updateShareNum">
         UPDATE a_article SET share = share + #{num} WHERE article_id = #{articleId}
     </update>
-
-    <update id="updatePageView">
-        UPDATE a_article SET page_view = page_view + 1 WHERE article_id = #{articleId}
-    </update>
-
-    <select id="selectCollectionByPage" resultMap="ArticleListResultMap">
-        SELECT a.article_id, a.title, a.published_time, a.tag_name, a.author,
-               a.share, a.star, a.comment, a.collection,
-               SUBSTRING(a.content, 1, 200) as content, a.stick, a.page_view
-        FROM a_article a
-        INNER JOIN a_collection c ON a.article_id = c.article_id
-        WHERE c.user_id = #{userId}
-        ORDER BY c.collection_id DESC
-        LIMIT #{offset}, #{pageSize}
-    </select>
-
-    <select id="selectCollectionCount" resultType="int">
-        SELECT COUNT(*) FROM a_collection WHERE user_id = #{userId}
-    </select>
 
 </mapper>

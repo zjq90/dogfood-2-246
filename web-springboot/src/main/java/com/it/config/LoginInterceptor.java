@@ -1,13 +1,11 @@
-package com.weibo.config;
+package com.it.config;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * 登录拦截器
- */
+
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Override

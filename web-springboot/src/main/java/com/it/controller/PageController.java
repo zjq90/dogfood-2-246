@@ -1,11 +1,11 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.dto.PageResult;
-import com.weibo.dto.Result;
-import com.weibo.entity.Article;
-import com.weibo.entity.User;
-import com.weibo.service.ArticleService;
-import com.weibo.service.UserService;
+import com.it.common.PageResult;
+import com.it.common.Result;
+import com.it.model.Article;
+import com.it.model.User;
+import com.it.service.ArticleService;
+import com.it.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-/**
- * 页面跳转控制器
- * 处理通用页面跳转
- * 
- * @author weibo Team
- */
 @Controller
 @RequestMapping("/page")
 public class PageController {
@@ -33,9 +27,6 @@ public class PageController {
     @Autowired
     private UserService userService;
 
-    /**
-     * 首页
-     */
     @GetMapping("/home")
     public String home(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                       @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
@@ -43,13 +34,11 @@ public class PageController {
                       @RequestParam(value = "keyword", required = false) String keyword,
                       Model model,
                       HttpServletRequest request) {
-        // 获取热门文章
         Result<PageResult<Article>> articleResult = articleService.getArticleList(pageNum, pageSize, tagId, keyword);
         if (articleResult.isSuccess()) {
             model.addAttribute("articlePage", articleResult.getData());
         }
 
-        // 获取热门文章TOP10
         Result<List<Article>> hotResult = articleService.getHotArticles(10);
         if (hotResult.isSuccess()) {
             model.addAttribute("hotArticles", hotResult.getData());
@@ -61,14 +50,10 @@ public class PageController {
         return "article_list";
     }
 
-    /**
-     * 文章详情页
-     */
     @GetMapping("/article/{articleId}")
     public String articleDetail(@PathVariable("articleId") Integer articleId,
                             HttpServletRequest request,
                             Model model) {
-        // 增加浏览量
         articleService.incrementPageView(articleId);
 
         HttpSession session = request.getSession();
@@ -82,9 +67,6 @@ public class PageController {
         return "redirect:/page/home";
     }
 
-    /**
-     * 文章编辑页
-     */
     @GetMapping("/article/edit")
     public String editArticlePage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
@@ -95,9 +77,6 @@ public class PageController {
         return "article_edit";
     }
 
-    /**
-     * 编辑现有文章
-     */
     @GetMapping("/article/edit/{articleId}")
     public String editExistArticlePage(@PathVariable("articleId") Integer articleId,
                                    HttpServletRequest request,
@@ -116,9 +95,6 @@ public class PageController {
         return "redirect:/page/home";
     }
 
-    /**
-     * 所有人页面
-     */
     @GetMapping("/everyone")
     public String everyonePage(@RequestParam(value = "keyword", required = false) String keyword,
                             Model model) {
@@ -131,50 +107,32 @@ public class PageController {
         return "everyone";
     }
 
-    /**
-     * 关注列表页面
-     */
     @GetMapping("/following")
     public String followingPage() {
         return "attention";
     }
 
-    /**
-     * 粉丝列表页面
-     */
     @GetMapping("/follower")
     public String followerPage() {
         return "friend";
     }
 
-    /**
-     * 黑名单页面
-     */
     @GetMapping("/blacklist")
     public String blacklistPage() {
         return "blacklist";
     }
 
-    /**
-     * 豆邮页面
-     */
     @GetMapping("/doumail")
     public String doumailPage() {
         return "doumail";
     }
 
-    /**
-     * 豆邮详情页面
-     */
     @GetMapping("/doumail/{userId}")
     public String doumailDetailPage(@PathVariable("userId") Integer userId, Model model) {
         model.addAttribute("targetUserId", userId);
         return "doumail_show";
     }
 
-    /**
-     * 发送豆邮页面
-     */
     @GetMapping("/sendmail/{userId}")
     public String sendMailPage(@PathVariable("userId") Integer userId, Model model) {
         User user = userService.getUserByUserId(userId);
