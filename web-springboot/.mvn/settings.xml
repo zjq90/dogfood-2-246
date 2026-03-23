@@ -12,4 +12,38 @@
         </mirror>
     </mirrors>
     
+    <profiles>
+        <profile>
+            <id>aliyun</id>
+            <repositories>
+                <repository>
+                    <id>aliyun-central</id>
+                    <url>https://maven.aliyun.com/repository/central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>aliyun-plugin</id>
+                    <url>https://maven.aliyun.com/repository/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    
+    <activeProfiles>
+        <activeProfile>aliyun</activeProfile>
+    </activeProfiles>
+    
 </settings>

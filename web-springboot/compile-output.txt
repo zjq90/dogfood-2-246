@@ -1,0 +1,646 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.weibo:weibo-springboot >---------------------
+[INFO] Building weibo Spring Boot 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ weibo-springboot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 23 resources
+[INFO] 
+[INFO] --- compiler:3.8.1:compile (default-compile) @ weibo-springboot ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/Application.java:[14,8] 类WeiboApplication是公共的, 应在名为 WeiboApplication.java 的文件中声明
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[55,24] 找不到符号
+  符号:   方法 setList(java.util.List<com.weibo.model.Article>)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[56,24] 找不到符号
+  符号:   方法 setTotal(int)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[57,24] 找不到符号
+  符号:   方法 setPageNum(java.lang.Integer)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[58,24] 找不到符号
+  符号:   方法 setPageSize(java.lang.Integer)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[75,24] 找不到符号
+  符号:   方法 setList(java.util.List<com.weibo.model.Article>)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[76,24] 找不到符号
+  符号:   方法 setTotal(int)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[77,24] 找不到符号
+  符号:   方法 setPageNum(java.lang.Integer)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[78,24] 找不到符号
+  符号:   方法 setPageSize(java.lang.Integer)
+  位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[125,25] 找不到符号
+  符号:   方法 getAuthorId()
+  位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[46,16] 找不到符号
+  符号:   方法 setAuthor(java.lang.Integer)
+  位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[50,70] 找不到符号
+  符号:   方法 toList()
+  位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[54,49] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[57,50] 找不到符号
+  符号:   方法 getMsg()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[75,70] 找不到符号
+  符号:   方法 toList()
+  位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[79,50] 找不到符号
+  符号:   方法 getArticleId()
+  位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[80,55] 找不到符号
+  符号:   方法 getArticleId()
+  位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[82,50] 找不到符号
+  符号:   方法 getMsg()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[139,76] 找不到符号
+  符号:   方法 getData()
+  位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[140,74] 找不到符号
+  符号:   方法 getData()
+  位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[141,70] 找不到符号
+  符号:   方法 getData()
+  位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[31,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[36,62] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[37,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[45,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[50,64] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[51,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[59,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[64,65] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[65,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[73,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[78,67] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[79,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[87,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[92,63] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[93,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[105,60] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[106,64] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[115,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[125,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[130,34] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[140,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[145,75] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[146,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[154,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[159,62] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[160,40] 不兼容的类型: 条件表达式中的类型错误
+    推论变量T具有不兼容的限制范围
+      等式约束条件: java.lang.Void
+      下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[168,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[178,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[183,38] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[30,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[33,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[43,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[46,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[56,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[59,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[69,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[72,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[82,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[85,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,60] 找不到符号
+  符号:   方法 getArticleId()
+  位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,84] 找不到符号
+  符号:   方法 getUserComId()
+  位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[105,47] 找不到符号
+  符号:   方法 getArticleId()
+  位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[111,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[117,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[123,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[135,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[147,46] 找不到符号
+  符号:   方法 getCommentId()
+  位置: 类型为com.weibo.model.ArticleReply的变量 reply
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[147,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[153,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[55,31] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[58,47] 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[59,48] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[84,50] 找不到符号
+  符号:   方法 getMsg()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[104,50] 找不到符号
+  符号:   方法 getMsg()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[156,13] 找不到符号
+  符号:   方法 setUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[33,19] 找不到符号
+  符号:   方法 setFromUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[34,19] 找不到符号
+  符号:   方法 setToUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[35,19] 找不到符号
+  符号:   方法 setState(int)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[36,19] 找不到符号
+  符号:   方法 setTime(java.util.Date)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[69,19] 找不到符号
+  符号:   方法 setFromUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[70,19] 找不到符号
+  符号:   方法 setToUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[71,19] 找不到符号
+  符号:   方法 setState(int)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[72,19] 找不到符号
+  符号:   方法 setTime(java.util.Date)
+  位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[66,16] 找不到符号
+  符号:   方法 setFromUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[67,16] 找不到符号
+  符号:   方法 setToUserId(java.lang.Integer)
+  位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[68,16] 找不到符号
+  符号:   方法 setChatMsg(java.lang.String)
+  位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/DoumailServiceImpl.java:[59,20] 找不到符号
+  符号:   方法 setTime(java.util.Date)
+  位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/DoumailServiceImpl.java:[60,20] 找不到符号
+  符号:   方法 setIsRead(int)
+  位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/VerifyCodeController.java:[27,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.VerifyCodeController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[39,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[62,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[64,13] 找不到符号
+  符号:   变量 log
+  位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[36,60] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.ArticleList>的变量 articleResult
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[40,56] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<java.util.List<com.weibo.model.Article>>的变量 hotResult
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[56,49] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[83,49] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[95,51] 找不到符号
+  符号:   方法 getData()
+  位置: 类型为com.weibo.common.Result<java.util.List<com.weibo.model.User>>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/UserServiceImpl.java:[33,21] 找不到符号
+  符号:   方法 getStatus()
+  位置: 类型为com.weibo.model.User的变量 user
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.949 s
+[INFO] Finished at: 2026-03-23T13:20:32+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project weibo-springboot: Compilation failure: Compilation failure: 
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/Application.java:[14,8] 类WeiboApplication是公共的, 应在名为 WeiboApplication.java 的文件中声明
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[55,24] 找不到符号
+[ERROR]   符号:   方法 setList(java.util.List<com.weibo.model.Article>)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[56,24] 找不到符号
+[ERROR]   符号:   方法 setTotal(int)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[57,24] 找不到符号
+[ERROR]   符号:   方法 setPageNum(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[58,24] 找不到符号
+[ERROR]   符号:   方法 setPageSize(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[75,24] 找不到符号
+[ERROR]   符号:   方法 setList(java.util.List<com.weibo.model.Article>)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[76,24] 找不到符号
+[ERROR]   符号:   方法 setTotal(int)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[77,24] 找不到符号
+[ERROR]   符号:   方法 setPageNum(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[78,24] 找不到符号
+[ERROR]   符号:   方法 setPageSize(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.ArticleList的变量 articleList
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/ArticleServiceImpl.java:[125,25] 找不到符号
+[ERROR]   符号:   方法 getAuthorId()
+[ERROR]   位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[46,16] 找不到符号
+[ERROR]   符号:   方法 setAuthor(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[50,70] 找不到符号
+[ERROR]   符号:   方法 toList()
+[ERROR]   位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[54,49] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[57,50] 找不到符号
+[ERROR]   符号:   方法 getMsg()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[75,70] 找不到符号
+[ERROR]   符号:   方法 toList()
+[ERROR]   位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[79,50] 找不到符号
+[ERROR]   符号:   方法 getArticleId()
+[ERROR]   位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[80,55] 找不到符号
+[ERROR]   符号:   方法 getArticleId()
+[ERROR]   位置: 类型为com.weibo.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleController.java:[82,50] 找不到符号
+[ERROR]   符号:   方法 getMsg()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[139,76] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[140,74] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/FriendController.java:[141,70] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类 com.weibo.common.Result<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[31,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[36,62] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[37,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[45,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[50,64] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[51,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[59,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[64,65] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[65,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[73,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[78,67] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[79,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[87,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[92,63] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[93,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[105,60] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[106,64] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[115,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[125,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[130,34] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[140,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[145,75] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[146,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[154,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[159,62] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[160,40] 不兼容的类型: 条件表达式中的类型错误
+[ERROR]     推论变量T具有不兼容的限制范围
+[ERROR]       等式约束条件: java.lang.Void
+[ERROR]       下限: java.lang.String
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[168,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[178,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.ArticleInteractionController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/ArticleInteractionController.java:[183,38] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[30,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[33,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[43,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[46,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[56,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[59,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[69,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[72,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[82,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[85,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,60] 找不到符号
+[ERROR]   符号:   方法 getArticleId()
+[ERROR]   位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,84] 找不到符号
+[ERROR]   符号:   方法 getUserComId()
+[ERROR]   位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[103,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[105,47] 找不到符号
+[ERROR]   符号:   方法 getArticleId()
+[ERROR]   位置: 类型为com.weibo.model.ArticleComment的变量 comment
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[111,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[117,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[123,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[135,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[147,46] 找不到符号
+[ERROR]   符号:   方法 getCommentId()
+[ERROR]   位置: 类型为com.weibo.model.ArticleReply的变量 reply
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[147,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/ArticleInteractionService.java:[153,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.service.ArticleInteractionService
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[55,31] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[58,47] 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[59,48] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[84,50] 找不到符号
+[ERROR]   符号:   方法 getMsg()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[104,50] 找不到符号
+[ERROR]   符号:   方法 getMsg()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UserController.java:[156,13] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[33,19] 找不到符号
+[ERROR]   符号:   方法 setFromUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[34,19] 找不到符号
+[ERROR]   符号:   方法 setToUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[35,19] 找不到符号
+[ERROR]   符号:   方法 setState(int)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[36,19] 找不到符号
+[ERROR]   符号:   方法 setTime(java.util.Date)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[69,19] 找不到符号
+[ERROR]   符号:   方法 setFromUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[70,19] 找不到符号
+[ERROR]   符号:   方法 setToUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[71,19] 找不到符号
+[ERROR]   符号:   方法 setState(int)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/FriendServiceImpl.java:[72,19] 找不到符号
+[ERROR]   符号:   方法 setTime(java.util.Date)
+[ERROR]   位置: 类型为com.weibo.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[66,16] 找不到符号
+[ERROR]   符号:   方法 setFromUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[67,16] 找不到符号
+[ERROR]   符号:   方法 setToUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/DoumailController.java:[68,16] 找不到符号
+[ERROR]   符号:   方法 setChatMsg(java.lang.String)
+[ERROR]   位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/DoumailServiceImpl.java:[59,20] 找不到符号
+[ERROR]   符号:   方法 setTime(java.util.Date)
+[ERROR]   位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/DoumailServiceImpl.java:[60,20] 找不到符号
+[ERROR]   符号:   方法 setIsRead(int)
+[ERROR]   位置: 类型为com.weibo.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/VerifyCodeController.java:[27,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.VerifyCodeController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[39,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[62,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/UploadController.java:[64,13] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.weibo.controller.UploadController
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[36,60] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.ArticleList>的变量 articleResult
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[40,56] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<java.util.List<com.weibo.model.Article>>的变量 hotResult
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[56,49] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[83,49] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<com.weibo.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/controller/PageController.java:[95,51] 找不到符号
+[ERROR]   符号:   方法 getData()
+[ERROR]   位置: 类型为com.weibo.common.Result<java.util.List<com.weibo.model.User>>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/glm/web-springboot/src/main/java/com/weibo/service/impl/UserServiceImpl.java:[33,21] 找不到符号
+[ERROR]   符号:   方法 getStatus()
+[ERROR]   位置: 类型为com.weibo.model.User的变量 user
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

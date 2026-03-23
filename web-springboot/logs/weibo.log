@@ -1,0 +1,442 @@
+2026-03-23 13:33:55.273 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 16592 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:33:55.275 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:33:55.276 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:33:57.423 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:33:57.430 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:33:57.430 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:33:57.632 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:33:57.637 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:33:57.638 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2044 ms
+2026-03-23 13:33:57.757 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:33:58.384 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:33:59.294 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 13:33:59.300 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 6.59 seconds (JVM running for 8.197)
+2026-03-23 13:34:29.629 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 13:34:29.629 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 13:34:29.630 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-23 13:34:29.647 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /
+2026-03-23 13:34:30.082 [http-nio-8080-exec-2] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /@vite/client
+2026-03-23 13:39:42.585 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 972 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:39:42.588 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:39:42.588 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:39:43.349 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:39:43.354 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:39:43.354 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:39:43.570 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:39:43.573 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:39:43.573 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 944 ms
+2026-03-23 13:39:43.688 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:39:43.940 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:39:44.287 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:39:44.288 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:39:44.292 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:39:44.293 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:39:44.301 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:39:44.313 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 13:40:30.093 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 9916 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:40:30.095 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:40:30.096 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:40:30.911 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:40:30.918 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:40:30.919 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:40:31.128 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:40:31.134 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:40:31.134 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1001 ms
+2026-03-23 13:40:31.247 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:40:31.488 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:40:31.849 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 13:40:31.856 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 2.073 seconds (JVM running for 2.816)
+2026-03-23 13:40:34.780 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 13:40:34.780 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 13:40:34.781 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-23 13:40:34.799 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /
+2026-03-23 13:47:05.245 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 11464 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:47:05.248 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:47:05.249 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:47:06.191 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:47:06.197 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:47:06.197 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:47:06.400 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:47:06.406 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:47:06.406 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1118 ms
+2026-03-23 13:47:06.504 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:47:06.833 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:47:07.175 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:47:07.176 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:47:07.181 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:47:07.182 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:47:07.189 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:47:07.221 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 13:50:56.268 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 19032 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:50:56.270 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:50:56.270 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:50:57.192 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:50:57.198 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:50:57.198 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:50:57.394 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:50:57.399 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:50:57.400 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1101 ms
+2026-03-23 13:50:57.494 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:50:57.796 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:50:58.131 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:50:58.133 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:50:58.136 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:50:58.137 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:50:58.145 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:50:58.156 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 13:52:17.103 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 5204 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:52:17.105 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:52:17.106 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:52:18.012 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:52:18.018 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:52:18.018 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:52:18.215 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:52:18.221 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:52:18.221 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1085 ms
+2026-03-23 13:52:18.313 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:52:18.616 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:52:18.949 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:52:18.950 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:52:18.954 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:52:18.955 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:52:18.963 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:52:18.972 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 13:52:42.324 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 11888 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:52:42.326 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:52:42.326 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:52:43.256 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:52:43.262 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:52:43.263 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:52:43.438 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:52:43.444 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:52:43.444 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1081 ms
+2026-03-23 13:52:43.545 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:52:43.847 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:52:44.167 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:52:44.169 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:52:44.172 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:52:44.174 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:52:44.181 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:52:44.193 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 13:53:16.599 [http-nio-8080-exec-9] INFO  org.apache.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xf20x010x000x060xee0x030x030xda0x8fwecf.VY@a0x1a0xc40x110xbef0x1e0xe90x18'0xb2s0xdc0xd5R0xf9>0x0d0xcek[0xfb ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2026-03-23 13:53:40.534 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 1960 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:53:40.536 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:53:40.537 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:53:41.509 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:53:41.516 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:53:41.516 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:53:41.846 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:53:41.852 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:53:41.853 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1287 ms
+2026-03-23 13:53:41.985 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:53:42.304 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:53:42.677 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 13:53:42.683 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 2.411 seconds (JVM running for 2.803)
+2026-03-23 13:53:51.727 [http-nio-8080-exec-1] INFO  org.apache.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xf20x010x000x060xee0x030x03`0x12z0x850xbe0x130xd8w0xf70xc80xb30x1c0xf50x8f0xb9Q*0x900xedP0xb00xdb0xb6m0xb50x9c0x990x13(0xe20xa0# ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2026-03-23 13:57:20.011 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 4576 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:57:20.012 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:57:20.013 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:57:20.924 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:57:20.930 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:57:20.931 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:57:21.180 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:57:21.187 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:57:21.187 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1146 ms
+2026-03-23 13:57:21.279 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:57:21.578 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:57:21.927 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 13:57:21.933 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 2.18 seconds (JVM running for 2.557)
+2026-03-23 13:58:46.570 [http-nio-8080-exec-1] INFO  org.apache.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xd20x010x000x060xce0x030x030x850xee0xd4/0x8e0x910xe80x0a0xed0xa7b[0x120xc20xa4!160xe20x100x16H0xd50xcfs0x1f0xfe>(0xcd0x8aF ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2026-03-23 13:59:14.371 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 23764 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 13:59:14.373 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 13:59:14.373 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 13:59:15.307 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 13:59:15.313 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 13:59:15.313 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 13:59:15.512 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 13:59:15.518 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 13:59:15.519 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1117 ms
+2026-03-23 13:59:15.614 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 13:59:15.945 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 13:59:16.307 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 13:59:16.308 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 13:59:16.312 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 13:59:16.314 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 13:59:16.322 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 13:59:16.334 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 14:02:54.941 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 2664 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 14:02:54.942 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 14:02:54.943 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 14:02:55.877 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 14:02:55.886 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 14:02:55.886 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 14:02:56.114 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 14:02:56.120 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 14:02:56.120 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1149 ms
+2026-03-23 14:02:56.214 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 14:02:56.539 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 14:02:56.888 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 14:02:56.889 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 14:02:56.894 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 14:02:56.895 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 14:02:56.903 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 14:02:56.913 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 14:03:06.079 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 23636 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 14:03:06.080 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 14:03:06.081 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 14:03:07.033 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 14:03:07.040 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 14:03:07.040 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 14:03:07.199 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 14:03:07.203 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 14:03:07.203 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1095 ms
+2026-03-23 14:03:07.301 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 14:03:07.625 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 14:03:07.984 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 14:03:07.985 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 14:03:07.989 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 14:03:07.990 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 14:03:07.997 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 14:03:08.008 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 14:06:59.672 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 1096 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 14:06:59.674 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 14:06:59.674 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 14:07:00.593 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 14:07:00.599 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 14:07:00.600 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 14:07:00.797 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 14:07:00.802 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 14:07:00.802 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1098 ms
+2026-03-23 14:07:00.895 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 14:07:01.210 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 14:07:01.572 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 14:07:01.579 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 2.193 seconds (JVM running for 2.586)
+2026-03-23 14:07:20.583 [http-nio-8080-exec-1] INFO  org.apache.coyote.http11.Http11Processor - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xf20x010x000x060xee0x030x030x8d?0x96g0x8c;0x84K0xa6G0xbfL0xef0x100xfe0xa7_0x1e#0xe60xb480xc90xc20x110xbf0xdd0xffs^0x040x99 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2026-03-23 14:08:55.705 [http-nio-8080-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 14:08:55.706 [http-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 14:08:55.706 [http-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-03-23 14:08:56.843 [http-nio-8080-exec-7] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /@vite/client
+2026-03-23 14:10:11.215 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 25580 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 14:10:11.217 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 14:10:11.218 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 14:10:12.073 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 14:10:12.079 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 14:10:12.080 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 14:10:12.303 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 14:10:12.306 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 14:10:12.307 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1036 ms
+2026-03-23 14:10:12.445 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 14:10:12.735 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 14:10:13.150 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-03-23 14:10:13.152 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-03-23 14:10:13.155 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-03-23 14:10:13.157 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-23 14:10:13.163 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-03-23 14:10:13.178 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-23 14:11:30.579 [main] INFO  com.weibo.WeiboApplication - Starting WeiboApplication using Java 1.8.0_121 on MSI with PID 21488 (D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot\target\classes started by 20807 in D:\Aijava\javaproject\260319\dogfood-2-246\glm\web-springboot)
+2026-03-23 14:11:30.581 [main] DEBUG com.weibo.WeiboApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-23 14:11:30.582 [main] INFO  com.weibo.WeiboApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-23 14:11:31.326 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-03-23 14:11:31.331 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-23 14:11:31.331 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-23 14:11:31.539 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-03-23 14:11:31.544 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-23 14:11:31.544 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 922 ms
+2026-03-23 14:11:31.657 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-03-23 14:11:31.911 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-03-23 14:11:32.284 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-03-23 14:11:32.291 [main] INFO  com.weibo.WeiboApplication - Started WeiboApplication in 2.023 seconds (JVM running for 2.825)
+2026-03-23 14:11:34.906 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 14:11:34.906 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-23 14:11:34.907 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-03-23 14:11:42.743 [http-nio-8080-exec-10] INFO  com.weibo.controller.UserApiController - API用户登录请求，用户名：123
+2026-03-23 14:11:42.826 [http-nio-8080-exec-10] INFO  com.weibo.controller.UserApiController - API用户登录成功，用户名：123
+2026-03-23 14:11:42.853 [http-nio-8080-exec-2] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /login
+2026-03-23 14:12:08.399 [http-nio-8080-exec-8] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /@vite/client
+2026-03-23 14:12:14.925 [http-nio-8080-exec-9] INFO  com.weibo.controller.UserApiController - API用户登录请求，用户名：123
+2026-03-23 14:12:14.928 [http-nio-8080-exec-9] INFO  com.weibo.controller.UserApiController - API用户登录成功，用户名：123
+2026-03-23 14:12:15.006 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /login
+2026-03-23 14:12:15.228 [http-nio-8080-exec-6] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /@vite/client
