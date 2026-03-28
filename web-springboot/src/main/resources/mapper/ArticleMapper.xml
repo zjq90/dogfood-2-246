@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.weibo.mapper.ArticleMapper">
 
+    <!-- 文章结果映射 -->
     <resultMap id="ArticleResultMap" type="com.weibo.model.Article">
         <id column="article_id" property="articleId"/>
         <result column="title" property="title"/>
@@ -18,7 +19,8 @@
         <result column="stick" property="stick"/>
     </resultMap>
 
-    <resultMap id="ArticleListResultMap" type="com.weibo.model.ArticleList">
+    <!-- 文章列表结果映射 -->
+    <resultMap id="ArticleListResultMap" type="com.weibo.model.Article">
         <id column="article_id" property="articleId"/>
         <result column="title" property="title"/>
         <result column="published_time" property="publishedTime"/>
@@ -33,22 +35,26 @@
         <result column="page_view" property="pageView"/>
     </resultMap>
 
+    <!-- 基础列列表 -->
     <sql id="Base_Column_List">
         article_id, title, tag_name, author, published_time, tag_id, content,
         star, collection, comment, share, page_view, stick
     </sql>
 
+    <!-- 根据文章ID查询文章详情 -->
     <select id="selectByArticleId" resultMap="ArticleResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM a_article
         WHERE article_id = #{articleId}
     </select>
 
+    <!-- 新增文章 -->
     <insert id="insert" parameterType="com.weibo.model.Article" useGeneratedKeys="true" keyProperty="articleId">
         INSERT INTO a_article (title, tag_name, author, published_time, tag_id, content, stick)
         VALUES (#{title}, #{tagName}, #{authorId}, NOW(), #{tagId}, #{content}, 0)
     </insert>
 
+    <!-- 更新文章 -->
     <update id="update" parameterType="com.weibo.model.Article">
         UPDATE a_article
         <set>
@@ -60,10 +66,12 @@
         WHERE article_id = #{articleId}
     </update>
 
+    <!-- 删除文章 -->
     <delete id="delete">
         DELETE FROM a_article WHERE article_id = #{articleId}
     </delete>
 
+    <!-- 分页查询文章列表 -->
     <select id="selectArticleListByPage" resultMap="ArticleListResultMap">
         SELECT a.article_id, a.title, a.published_time, a.tag_name, a.author,
                a.share, a.star, a.comment, a.collection, 
@@ -73,10 +81,12 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <!-- 查询文章总数 -->
     <select id="selectArticleCount" resultType="int">
         SELECT COUNT(*) FROM a_article
     </select>
 
+    <!-- 根据作者ID查询文章列表 -->
     <select id="selectByAuthorId" resultMap="ArticleListResultMap">
         SELECT article_id, title, published_time, tag_name, author,
                share, star, comment, collection,
@@ -87,10 +97,12 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <!-- 查询用户的文章总数 -->
     <select id="selectCountByAuthorId" resultType="int">
         SELECT COUNT(*) FROM a_article WHERE author = #{authorId}
     </select>
 
+    <!-- 搜索文章（分页） -->
     <select id="selectSearchByPage" resultMap="ArticleListResultMap">
         SELECT article_id, title, published_time, tag_name, author,
                share, star, comment, collection,
@@ -102,45 +114,36 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <!-- 搜索文章总数 -->
     <select id="selectSearchCount" resultType="int">
         SELECT COUNT(*) FROM a_article
         WHERE title LIKE CONCAT('%', #{searchContent}, '%')
            OR content LIKE CONCAT('%', #{searchContent}, '%')
     </select>
 
+    <!-- 更新文章点赞数 -->
     <update id="updateStarNum">
         UPDATE a_article SET star = star + #{num} WHERE article_id = #{articleId}
     </update>
 
+    <!-- 更新文章收藏数 -->
     <update id="updateCollectionNum">
         UPDATE a_article SET collection = collection + #{num} WHERE article_id = #{articleId}
     </update>
 
+    <!-- 更新文章评论数 -->
     <update id="updateCommentNum">
         UPDATE a_article SET comment = comment + #{num} WHERE article_id = #{articleId}
     </update>
 
+    <!-- 更新文章转发数 -->
     <update id="updateShareNum">
         UPDATE a_article SET share = share + #{num} WHERE article_id = #{articleId}
     </update>
 
+    <!-- 增加文章浏览量 -->
     <update id="updatePageView">
         UPDATE a_article SET page_view = page_view + 1 WHERE article_id = #{articleId}
     </update>
-
-    <select id="selectCollectionByPage" resultMap="ArticleListResultMap">
-        SELECT a.article_id, a.title, a.published_time, a.tag_name, a.author,
-               a.share, a.star, a.comment, a.collection,
-               SUBSTRING(a.content, 1, 200) as content, a.stick, a.page_view
-        FROM a_article a
-        INNER JOIN a_collection c ON a.article_id = c.article_id
-        WHERE c.user_id = #{userId}
-        ORDER BY c.collection_id DESC
-        LIMIT #{offset}, #{pageSize}
-    </select>
-
-    <select id="selectCollectionCount" resultType="int">
-        SELECT COUNT(*) FROM a_collection WHERE user_id = #{userId}
-    </select>
 
 </mapper>
