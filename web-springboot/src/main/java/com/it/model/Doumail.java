@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -69,4 +69,10 @@ public class Doumail implements Serializable {
      * 阅读状态(0-未读, 1-已读)
      */
     private Integer read;
+
+    /**
+     * 创建时间（兼容字段）
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createTime;
 }

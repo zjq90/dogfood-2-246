@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weibo.mapper.UserMapper">
+<mapper namespace="com.it.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.weibo.model.User">
+    <resultMap id="BaseResultMap" type="com.it.model.User">
         <id column="user_id" property="userId"/>
         <result column="username" property="username"/>
         <result column="password" property="password"/>
@@ -17,14 +17,17 @@
         <result column="time" property="time"/>
         <result column="code" property="code"/>
         <result column="out_time" property="outTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         user_id, username, password, status, reported, title_time, portrait, 
-        signature, self_introduction, nickname, address, time, code, out_time
+        signature, self_introduction, nickname, address, time, code, out_time,
+        create_time, update_time
     </sql>
 
-    <select id="login" resultMap="BaseResultMap">
+    <select id="selectForLogin" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
         WHERE username = #{username} AND password = #{password}
@@ -42,12 +45,12 @@
         WHERE username = #{username}
     </select>
 
-    <insert id="insert" parameterType="com.weibo.model.User" useGeneratedKeys="true" keyProperty="userId">
-        INSERT INTO user (username, password, status, reported, portrait, nickname, time)
-        VALUES (#{username}, #{password}, #{status}, #{reported}, #{portrait}, #{nickname}, NOW())
+    <insert id="insertUser" parameterType="com.it.model.User" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO user (username, password, status, reported, portrait, nickname, time, create_time)
+        VALUES (#{username}, #{password}, #{status}, #{reported}, #{portrait}, #{nickname}, NOW(), NOW())
     </insert>
 
-    <update id="update" parameterType="com.weibo.model.User">
+    <update id="updateUser" parameterType="com.it.model.User">
         UPDATE user
         <set>
             <if test="nickname != null">nickname = #{nickname},</if>
@@ -55,6 +58,7 @@
             <if test="selfIntroduc != null">self_introduction = #{selfIntroduc},</if>
             <if test="address != null">address = #{address},</if>
             <if test="portrait != null">portrait = #{portrait},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
         </set>
         WHERE user_id = #{userId}
     </update>
@@ -65,6 +69,42 @@
 
     <update id="updatePassword">
         UPDATE user SET password = #{password} WHERE user_id = #{userId}
+    </update>
+
+    <update id="updatePersonage" parameterType="com.it.model.User">
+        UPDATE user
+        <set>
+            <if test="nickname != null">nickname = #{nickname},</if>
+            <if test="signature != null">signature = #{signature},</if>
+            <if test="selfIntroduc != null">self_introduction = #{selfIntroduc},</if>
+            <if test="address != null">address = #{address},</if>
+        </set>
+        WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateCodeAndOutTime" parameterType="com.it.model.User">
+        UPDATE user SET code = #{code}, out_time = #{outTime} WHERE user_id = #{userId}
+    </update>
+
+    <select id="selectByCode" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM user WHERE code = #{code}
+    </select>
+
+    <select id="selectAllUsers" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM user ORDER BY user_id DESC
+    </select>
+
+    <select id="searchUsers" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM user 
+        WHERE nickname LIKE CONCAT('%', #{keyword}, '%') OR username LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+
+    <update id="updateStatus">
+        UPDATE user SET status = #{status} WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateReported">
+        UPDATE user SET reported = #{reported} WHERE user_id = #{userId}
     </update>
 
     <select id="selectByPage" resultMap="BaseResultMap">

@@ -137,15 +137,15 @@ body {
     font-size: 14px;
 }
 </style>
-<form action="/api/user/login" method="post" id="login_form">
+<form action="/user/login" method="post" id="login_form">
 <div id="login">
 		<div ><h1 id="header_h1">登录豆瓣</h1>
 		    </div>
 	<div id="name" class="login_level">
-	   <input type="text" id="uname" name="username" placeholder="请输入用户名">
+	   <input type="text" id="uname" name="uname" placeholder="请输入用户名" value="${rememberedUsername}">
 	 </div>
 	 <div id="pwd" class="login_level">  
-	   <input type="password" id="upwd" name="password" placeholder="请输入密码" > 
+	   <input type="password" id="upwd" name="upwd" placeholder="请输入密码" value="${rememberedPassword}"> 
 	 </div>
 	 
 	 <div  id="select"> 
@@ -153,55 +153,30 @@ body {
 			    <input type="checkbox" name="auto" id="auto"/>自动登录 
 	     </label>
 	      <label>
-			    <input type="checkbox" name="remember" value="" id="remember"/>记住密码
+			    <input type="checkbox" name="remember" value="1" id="remember"/>记住密码
 		 </label>
 	 </div>
 		 <div>
-			    <input type="button" onclick="doLogin()" value="登录" id="entry" />
+			    <input type="submit" value="登录" id="entry" />
 		</div>
 		
 		<div>
-			    <a href="/register" id="login_bottom_find"><font color=blue>忘记密码</font></a>
-				<a href="/register" id="login_bottom_sign"><font color=blue>注册账号</font></a>
+			    <a href="/user/register" id="login_bottom_find"><font color=blue>忘记密码</font></a>
+				<a href="/user/register" id="login_bottom_sign"><font color=blue>注册账号</font></a>
 	    </div>
 	    <div id="msg" class="login_level">
-	    	<font color="red" id="errorMsg"></font> 
+	    	<font color="red">${errorMsg}</font> 
 	    </div>
 	</div>
 </form>
 
 <script type="text/javascript">
-    function doLogin(){
-        var username = document.getElementById("uname").value;
-        var password = document.getElementById("upwd").value;
-        if(username == ""){
-            alert("请输入用户名");
-            return;
+    // 回显记住的用户名和密码
+    window.onload = function() {
+        var errorMsg = document.getElementById('msg').getElementsByTagName('font')[0];
+        if (errorMsg && errorMsg.innerText.trim() === '') {
+            errorMsg.style.display = 'none';
         }
-        if(password == ""){
-            alert("请输入密码");
-            return;
-        }
-        
-        fetch('/api/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.code === 200) {
-                window.location.href = '/my_page';
-            } else {
-                document.getElementById('errorMsg').innerText = data.msg;
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('登录失败，请稍后重试');
-        });
     }
 </script>
 

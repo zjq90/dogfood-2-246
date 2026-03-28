@@ -1,6 +1,6 @@
-package com.weibo.mapper;
+package com.it.mapper;
 
-import com.weibo.entity.Friend;
+import com.it.model.Friend;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -126,4 +126,41 @@ public interface FriendMapper {
      */
     Integer checkIsFollowing(@Param("fromUserId") Integer fromUserId,
                              @Param("toUserId") Integer toUserId);
+    
+    // ==================== 兼容方法 ====================
+    
+    /**
+     * 根据用户ID和关注者ID查询（兼容）
+     */
+    default Friend selectByUserIdAndFollowerId(Integer userId, Integer followerId) {
+        return selectRelation(userId, followerId);
+    }
+    
+    /**
+     * 更新状态（兼容）
+     */
+    default int updateStatus(Friend friend) {
+        return updateFriendStatus(friend);
+    }
+    
+    /**
+     * 插入关注（兼容）
+     */
+    default int insertFollow(Friend friend) {
+        return insertFriend(friend);
+    }
+    
+    /**
+     * 删除关注（兼容）
+     */
+    default int deleteFollow(Integer userId, Integer followerId) {
+        return deleteFriend(userId, followerId);
+    }
+    
+    /**
+     * 查询是否存在关注关系（兼容）
+     */
+    default Friend selectFollowExists(Integer userId, Integer followerId) {
+        return selectRelation(userId, followerId);
+    }
 }

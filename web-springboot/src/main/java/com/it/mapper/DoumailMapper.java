@@ -1,6 +1,6 @@
-package com.weibo.mapper;
+package com.it.mapper;
 
-import com.weibo.entity.Doumail;
+import com.it.model.Doumail;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -94,4 +94,27 @@ public interface DoumailMapper {
      */
     Long selectDoumailCount(@Param("userId") Integer userId,
                             @Param("targetUserId") Integer targetUserId);
+    
+    // ==================== 兼容方法 ====================
+    
+    /**
+     * 查询两个用户之间的豆邮详情总数（兼容）
+     */
+    default Long selectDoumailDetailCount(Integer userId, Integer targetUserId) {
+        return selectDoumailCount(userId, targetUserId);
+    }
+    
+    /**
+     * 更新状态（兼容）
+     */
+    default int updateStatus(Integer fromUserId, Integer toUserId, int status) {
+        return markAsRead(fromUserId, toUserId);
+    }
+    
+    /**
+     * 根据ID删除（兼容）
+     */
+    default int deleteById(Integer doumailId, Integer userId) {
+        return deleteDoumail(doumailId, userId, 1);
+    }
 }

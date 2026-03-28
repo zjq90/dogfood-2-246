@@ -1,11 +1,11 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.dto.PageResult;
-import com.weibo.dto.Result;
-import com.weibo.entity.Article;
-import com.weibo.entity.User;
-import com.weibo.service.ArticleService;
-import com.weibo.service.UserService;
+import com.it.common.PageResult;
+import com.it.common.Result;
+import com.it.model.Article;
+import com.it.model.User;
+import com.it.service.ArticleService;
+import com.it.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +24,6 @@ import java.util.List;
  * @author weibo Team
  */
 @Controller
-@RequestMapping("/page")
 public class PageController {
 
     @Autowired
@@ -36,7 +35,7 @@ public class PageController {
     /**
      * 首页
      */
-    @GetMapping("/home")
+    @GetMapping({"/", "/page/home"})
     public String home(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                       @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
                       @RequestParam(value = "tagId", required = false) Integer tagId,
@@ -64,7 +63,7 @@ public class PageController {
     /**
      * 文章详情页
      */
-    @GetMapping("/article/{articleId}")
+    @GetMapping("/page/article/{articleId}")
     public String articleDetail(@PathVariable("articleId") Integer articleId,
                             HttpServletRequest request,
                             Model model) {
@@ -85,7 +84,7 @@ public class PageController {
     /**
      * 文章编辑页
      */
-    @GetMapping("/article/edit")
+    @GetMapping("/page/article/edit")
     public String editArticlePage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
@@ -98,7 +97,7 @@ public class PageController {
     /**
      * 编辑现有文章
      */
-    @GetMapping("/article/edit/{articleId}")
+    @GetMapping("/page/article/edit/{articleId}")
     public String editExistArticlePage(@PathVariable("articleId") Integer articleId,
                                    HttpServletRequest request,
                                    Model model) {
@@ -119,7 +118,7 @@ public class PageController {
     /**
      * 所有人页面
      */
-    @GetMapping("/everyone")
+    @GetMapping("/page/everyone")
     public String everyonePage(@RequestParam(value = "keyword", required = false) String keyword,
                             Model model) {
         if (keyword != null && !keyword.isEmpty()) {
@@ -134,7 +133,7 @@ public class PageController {
     /**
      * 关注列表页面
      */
-    @GetMapping("/following")
+    @GetMapping("/page/following")
     public String followingPage() {
         return "attention";
     }
@@ -142,7 +141,7 @@ public class PageController {
     /**
      * 粉丝列表页面
      */
-    @GetMapping("/follower")
+    @GetMapping("/page/follower")
     public String followerPage() {
         return "friend";
     }
@@ -150,7 +149,7 @@ public class PageController {
     /**
      * 黑名单页面
      */
-    @GetMapping("/blacklist")
+    @GetMapping("/page/blacklist")
     public String blacklistPage() {
         return "blacklist";
     }
@@ -158,7 +157,7 @@ public class PageController {
     /**
      * 豆邮页面
      */
-    @GetMapping("/doumail")
+    @GetMapping("/page/doumail")
     public String doumailPage() {
         return "doumail";
     }
@@ -175,7 +174,7 @@ public class PageController {
     /**
      * 发送豆邮页面
      */
-    @GetMapping("/sendmail/{userId}")
+    @GetMapping("/page/sendmail/{userId}")
     public String sendMailPage(@PathVariable("userId") Integer userId, Model model) {
         User user = userService.getUserByUserId(userId);
         model.addAttribute("targetUser", user);

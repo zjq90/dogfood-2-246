@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 文章评论实体类
- * 对应数据库表: a_comment
+ * 鏂囩珷璇勮瀹炰綋绫? * 瀵瑰簲鏁版嵁搴撹〃: a_comment
  */
 @Data
 public class ArticleComment implements Serializable {
@@ -15,48 +14,47 @@ public class ArticleComment implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 评论ID
+     * 璇勮ID
      */
     private Integer commentId;
 
     /**
-     * 文章ID
+     * 鏂囩珷ID
      */
     private Integer articleId;
 
     /**
-     * 评论内容
+     * 璇勮鍐呭
      */
     private String comMsg;
 
     /**
-     * 评论用户ID
+     * 璇勮鐢ㄦ埛ID
      */
     private Integer userComId;
 
     /**
-     * 评论用户头像
+     * 璇勮鐢ㄦ埛澶村儚
      */
     private String userComImg;
 
     /**
-     * 评论用户昵称
+     * 璇勮鐢ㄦ埛鏄电О
      */
     private String userComNick;
 
     /**
-     * 评论点赞数
-     */
+     * 璇勮鐐硅禐鏁?     */
     private Integer comStar;
 
     /**
-     * 评论时间
+     * 璇勮鏃堕棿
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date comTime;
 
     /**
-     * 当前用户点赞状态(0-未点赞, 1-已点赞)
+     * 褰撳墠鐢ㄦ埛鐐硅禐鐘舵€?0-鏈偣璧? 1-宸茬偣璧?
      */
     private Integer starStatus;
 }

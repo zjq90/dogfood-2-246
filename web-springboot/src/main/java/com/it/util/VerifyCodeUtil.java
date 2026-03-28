@@ -1,4 +1,4 @@
-package com.weibo.util;
+package com.it.util;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -8,14 +8,14 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 /**
- * 验证码工具类
+ * 楠岃瘉鐮佸伐鍏风被
  */
 public class VerifyCodeUtil {
 
     private int width = 70;
     private int height = 35;
     private Random random = new Random();
-    private String[] fontNames = {"宋体", "华文楷体", "黑体", "微软雅黑", "楷体_GB2312"};
+    private String[] fontNames = {"瀹嬩綋", "鍗庢枃妤蜂綋", "榛戜綋", "寰蒋闆呴粦", "妤蜂綋_GB2312"};
     private String codes = "0123456789abcdefghjkmnopqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ";
     private Color bgColor = new Color(255, 255, 255);
     private String text;

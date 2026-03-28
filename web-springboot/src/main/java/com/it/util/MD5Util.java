@@ -1,18 +1,17 @@
-package com.weibo.util;
+package com.it.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * MD5加密工具类
- */
+ * MD5鍔犲瘑宸ュ叿绫? */
 public class MD5Util {
 
     private MD5Util() {
     }
 
     /**
-     * MD5加密
+     * MD5鍔犲瘑
      */
     public static String encrypt(String source) {
         if (source == null || source.isEmpty()) {
@@ -31,12 +30,12 @@ public class MD5Util {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("MD5加密失败", e);
+            throw new RuntimeException("MD5鍔犲瘑澶辫触", e);
         }
     }
 
     /**
-     * 验证密码
+     * 楠岃瘉瀵嗙爜
      */
     public static boolean verify(String source, String encrypted) {
         return encrypt(source).equals(encrypted);

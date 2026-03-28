@@ -1,7 +1,7 @@
-package com.weibo.mapper;
+package com.it.mapper;
 
-import com.weibo.model.ArticleComment;
-import com.weibo.model.ArticleReply;
+import com.it.model.ArticleComment;
+import com.it.model.ArticleReply;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 文章回复实体类
- * 对应数据库表: a_reply
+ * 鏂囩珷鍥炲瀹炰綋绫? * 瀵瑰簲鏁版嵁搴撹〃: a_reply
  */
 @Data
 public class ArticleReply implements Serializable {
@@ -15,52 +14,48 @@ public class ArticleReply implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 回复ID
+     * 鍥炲ID
      */
     private Integer replyId;
 
     /**
-     * 评论ID
+     * 璇勮ID
      */
     private Integer commentId;
 
     /**
-     * 回复内容
+     * 鍥炲鍐呭
      */
     private String replyMsg;
 
     /**
-     * 回复者用户ID
+     * 鍥炲鑰呯敤鎴稩D
      */
     private Integer userReplyFromId;
 
     /**
-     * 被回复用户ID
+     * 琚洖澶嶇敤鎴稩D
      */
     private Integer userReplyToId;
 
     /**
-     * 回复者头像
-     */
+     * 鍥炲鑰呭ご鍍?     */
     private String userReplyImg;
 
     /**
-     * 被回复者昵称
-     */
+     * 琚洖澶嶈€呮樀绉?     */
     private String userReplyToNick;
 
     /**
-     * 回复者昵称
-     */
+     * 鍥炲鑰呮樀绉?     */
     private String userReplyFromNick;
 
     /**
-     * 回复点赞数
-     */
+     * 鍥炲鐐硅禐鏁?     */
     private Integer replyStar;
 
     /**
-     * 回复时间
+     * 鍥炲鏃堕棿
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date replyTime;

@@ -1,10 +1,10 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.common.Result;
-import com.weibo.model.ArticleComment;
-import com.weibo.model.ArticleReply;
-import com.weibo.model.User;
-import com.weibo.service.ArticleInteractionService;
+import com.it.common.Result;
+import com.it.model.ArticleComment;
+import com.it.model.ArticleReply;
+import com.it.model.User;
+import com.it.service.ArticleInteractionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,9 +27,9 @@ public class ArticleInteractionController {
      * 点赞文章
      */
     @PostMapping("/star/{articleId}")
-    public Result<Void> starArticle(@PathVariable Integer articleId, HttpSession session) {
+    public Result<String> starArticle(@PathVariable Integer articleId, HttpSession session) {
         log.info("点赞文章, articleId: {}", articleId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -41,9 +41,9 @@ public class ArticleInteractionController {
      * 取消点赞文章
      */
     @DeleteMapping("/star/{articleId}")
-    public Result<Void> unstarArticle(@PathVariable Integer articleId, HttpSession session) {
+    public Result<String> unstarArticle(@PathVariable Integer articleId, HttpSession session) {
         log.info("取消点赞文章, articleId: {}", articleId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -55,9 +55,9 @@ public class ArticleInteractionController {
      * 收藏文章
      */
     @PostMapping("/collect/{articleId}")
-    public Result<Void> collectArticle(@PathVariable Integer articleId, HttpSession session) {
+    public Result<String> collectArticle(@PathVariable Integer articleId, HttpSession session) {
         log.info("收藏文章, articleId: {}", articleId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -69,9 +69,9 @@ public class ArticleInteractionController {
      * 取消收藏文章
      */
     @DeleteMapping("/collect/{articleId}")
-    public Result<Void> uncollectArticle(@PathVariable Integer articleId, HttpSession session) {
+    public Result<String> uncollectArticle(@PathVariable Integer articleId, HttpSession session) {
         log.info("取消收藏文章, articleId: {}", articleId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -83,9 +83,9 @@ public class ArticleInteractionController {
      * 转发文章
      */
     @PostMapping("/share/{articleId}")
-    public Result<Void> shareArticle(@PathVariable Integer articleId, HttpSession session) {
+    public Result<String> shareArticle(@PathVariable Integer articleId, HttpSession session) {
         log.info("转发文章, articleId: {}", articleId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -98,7 +98,7 @@ public class ArticleInteractionController {
      */
     @GetMapping("/status/{articleId}")
     public Result<int[]> getInteractionStatus(@PathVariable Integer articleId, HttpSession session) {
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.success(new int[]{0, 0});
         }
@@ -123,7 +123,7 @@ public class ArticleInteractionController {
     @PostMapping("/comment")
     public Result<ArticleComment> addComment(@RequestBody ArticleComment comment, HttpSession session) {
         log.info("发表评论");
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -136,9 +136,9 @@ public class ArticleInteractionController {
      * 删除评论
      */
     @DeleteMapping("/comment/{commentId}")
-    public Result<Void> deleteComment(@PathVariable Integer commentId, HttpSession session) {
+    public Result<String> deleteComment(@PathVariable Integer commentId, HttpSession session) {
         log.info("删除评论, commentId: {}", commentId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -150,9 +150,9 @@ public class ArticleInteractionController {
      * 点赞评论
      */
     @PostMapping("/comment/star/{commentId}")
-    public Result<Void> starComment(@PathVariable Integer commentId, HttpSession session) {
+    public Result<String> starComment(@PathVariable Integer commentId, HttpSession session) {
         log.info("点赞评论, commentId: {}", commentId);
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }
@@ -176,7 +176,7 @@ public class ArticleInteractionController {
     @PostMapping("/reply")
     public Result<ArticleReply> addReply(@RequestBody ArticleReply reply, HttpSession session) {
         log.info("发表回复");
-        User user = (User) session.getAttribute("userInfo");
+        User user = (User) session.getAttribute("loginUser");
         if (user == null) {
             return Result.error("未登录");
         }

@@ -1,0 +1,335 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.weibo:weibo-springboot >---------------------
+[INFO] Building weibo Spring Boot 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ weibo-springboot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 0 resource
+[INFO] Copying 23 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ weibo-springboot ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to D:\Aijava\javaproject\260319\dogfood-2-246\seed\web-springboot\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[43,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[61,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[81,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[85,26] 找不到符号
+  符号:   方法 fail(java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[106,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[60,35] 找不到符号
+  符号:   方法 selectDoumailDetailCount(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[75,16] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.it.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[92,35] 找不到符号
+  符号:   方法 updateStatus(java.lang.Integer,java.lang.Integer,int)
+  位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[107,35] 找不到符号
+  符号:   方法 deleteById(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[110,50] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<com.it.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[138,54] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<com.it.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[238,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[242,26] 找不到符号
+  符号:   方法 fail(java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[273,26] 找不到符号
+  符号:   方法 fail(java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[307,50] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<java.lang.Integer>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[323,50] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<java.lang.Boolean>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[59,16] 找不到符号
+  符号:   方法 setAuthor(java.lang.Integer)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[67,28] 找不到符号
+  符号:   方法 toList()
+  位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[76,50] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<com.it.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[101,28] 找不到符号
+  符号:   方法 toList()
+  位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[110,50] 找不到符号
+  符号:   方法 getMessage()
+  位置: 类型为com.it.common.Result<com.it.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[125,26] 找不到符号
+  符号:   方法 fail(int,java.lang.String)
+  位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[92,67] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[93,16] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[94,16] 找不到符号
+  符号:   方法 setUpdateTime(java.util.Date)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[96,16] 找不到符号
+  符号:   方法 setCollectCount(int)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[97,16] 找不到符号
+  符号:   方法 setStarCount(int)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[98,16] 找不到符号
+  符号:   方法 setCommentCount(int)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[99,16] 找不到符号
+  符号:   方法 setShareCount(int)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[124,16] 找不到符号
+  符号:   方法 setUpdateTime(java.util.Date)
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[154,21] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[43,45] 找不到符号
+  符号:   方法 selectByUserIdAndFollowerId(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[50,31] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.it.model.Friend的变量 existingFriend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[51,42] 找不到符号
+  符号:   方法 updateStatus(com.it.model.Friend)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[56,15] 找不到符号
+  符号:   方法 setUserId(java.lang.Integer)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[57,15] 找不到符号
+  符号:   方法 setFollowerId(java.lang.Integer)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[59,15] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[60,34] 找不到符号
+  符号:   方法 insertFollow(com.it.model.Friend)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[75,34] 找不到符号
+  符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[94,21] 找不到符号
+  符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[96,45] 找不到符号
+  符号:   方法 selectByUserIdAndFollowerId(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[103,38] 找不到符号
+  符号:   方法 updateStatus(com.it.model.Friend)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[107,15] 找不到符号
+  符号:   方法 setUserId(java.lang.Integer)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[108,15] 找不到符号
+  符号:   方法 setFollowerId(java.lang.Integer)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[110,15] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[111,34] 找不到符号
+  符号:   方法 insertFollow(com.it.model.Friend)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[126,34] 找不到符号
+  符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[143,55] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[161,54] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[179,52] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[207,37] 找不到符号
+  符号:   方法 selectFollowExists(java.lang.Integer,java.lang.Integer)
+  位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[221,55] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[234,54] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[247,52] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[INFO] 54 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.953 s
+[INFO] Finished at: 2026-03-28T16:11:41+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project weibo-springboot: Compilation failure: Compilation failure: 
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[43,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[61,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[81,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[85,26] 找不到符号
+[ERROR]   符号:   方法 fail(java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/DoumailController.java:[106,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[60,35] 找不到符号
+[ERROR]   符号:   方法 selectDoumailDetailCount(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[75,16] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Doumail的变量 doumail
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[92,35] 找不到符号
+[ERROR]   符号:   方法 updateStatus(java.lang.Integer,java.lang.Integer,int)
+[ERROR]   位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/DoumailServiceImpl.java:[107,35] 找不到符号
+[ERROR]   符号:   方法 deleteById(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.DoumailMapper的变量 doumailMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[110,50] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<com.it.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[138,54] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<com.it.model.User>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[238,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[242,26] 找不到符号
+[ERROR]   符号:   方法 fail(java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[273,26] 找不到符号
+[ERROR]   符号:   方法 fail(java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[307,50] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<java.lang.Integer>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/UserController.java:[323,50] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<java.lang.Boolean>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[59,16] 找不到符号
+[ERROR]   符号:   方法 setAuthor(java.lang.Integer)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[67,28] 找不到符号
+[ERROR]   符号:   方法 toList()
+[ERROR]   位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[76,50] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<com.it.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[101,28] 找不到符号
+[ERROR]   符号:   方法 toList()
+[ERROR]   位置: 接口 java.util.stream.Stream<java.lang.Integer>
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[110,50] 找不到符号
+[ERROR]   符号:   方法 getMessage()
+[ERROR]   位置: 类型为com.it.common.Result<com.it.model.Article>的变量 result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/controller/ArticleController.java:[125,26] 找不到符号
+[ERROR]   符号:   方法 fail(int,java.lang.String)
+[ERROR]   位置: 类 com.it.common.Result
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[92,67] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[93,16] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[94,16] 找不到符号
+[ERROR]   符号:   方法 setUpdateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[96,16] 找不到符号
+[ERROR]   符号:   方法 setCollectCount(int)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[97,16] 找不到符号
+[ERROR]   符号:   方法 setStarCount(int)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[98,16] 找不到符号
+[ERROR]   符号:   方法 setCommentCount(int)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[99,16] 找不到符号
+[ERROR]   符号:   方法 setShareCount(int)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[124,16] 找不到符号
+[ERROR]   符号:   方法 setUpdateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/ArticleServiceImpl.java:[154,21] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.it.model.Article的变量 article
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[43,45] 找不到符号
+[ERROR]   符号:   方法 selectByUserIdAndFollowerId(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[50,31] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 existingFriend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[51,42] 找不到符号
+[ERROR]   符号:   方法 updateStatus(com.it.model.Friend)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[56,15] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[57,15] 找不到符号
+[ERROR]   符号:   方法 setFollowerId(java.lang.Integer)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[59,15] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[60,34] 找不到符号
+[ERROR]   符号:   方法 insertFollow(com.it.model.Friend)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[75,34] 找不到符号
+[ERROR]   符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[94,21] 找不到符号
+[ERROR]   符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[96,45] 找不到符号
+[ERROR]   符号:   方法 selectByUserIdAndFollowerId(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[103,38] 找不到符号
+[ERROR]   符号:   方法 updateStatus(com.it.model.Friend)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[107,15] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Integer)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[108,15] 找不到符号
+[ERROR]   符号:   方法 setFollowerId(java.lang.Integer)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[110,15] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.it.model.Friend的变量 friend
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[111,34] 找不到符号
+[ERROR]   符号:   方法 insertFollow(com.it.model.Friend)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[126,34] 找不到符号
+[ERROR]   符号:   方法 deleteFollow(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[143,55] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[161,54] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[179,52] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[207,37] 找不到符号
+[ERROR]   符号:   方法 selectFollowExists(java.lang.Integer,java.lang.Integer)
+[ERROR]   位置: 类型为com.it.mapper.FriendMapper的变量 friendMapper
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[221,55] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[234,54] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] /D:/Aijava/javaproject/260319/dogfood-2-246/seed/web-springboot/src/main/java/com/it/service/impl/FriendServiceImpl.java:[247,52] 不兼容的类型: java.lang.Integer无法转换为java.lang.Long
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

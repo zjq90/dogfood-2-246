@@ -1,4 +1,4 @@
-package com.weibo.common;
+package com.it.common;
 
 /**
  * 业务异常类

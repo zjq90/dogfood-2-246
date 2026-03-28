@@ -1,9 +1,9 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.dto.PageResult;
-import com.weibo.dto.Result;
-import com.weibo.entity.Doumail;
-import com.weibo.service.DoumailService;
+import com.it.common.PageResult;
+import com.it.common.Result;
+import com.it.model.Doumail;
+import com.it.service.DoumailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "请先登录");
         }
 
         return doumailService.getConversationList(userId, pageNum, pageSize);
@@ -58,7 +58,7 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "请先登录");
         }
 
         // 标记为已读
@@ -78,11 +78,11 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "请先登录");
         }
 
         if (content == null || content.trim().isEmpty()) {
-            return Result.fail("内容不能为空");
+            return Result.error("内容不能为空");
         }
 
         Doumail doumail = new Doumail();
@@ -103,7 +103,7 @@ public class DoumailController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "请先登录");
         }
 
         return doumailService.deleteDoumail(doumailId, userId);

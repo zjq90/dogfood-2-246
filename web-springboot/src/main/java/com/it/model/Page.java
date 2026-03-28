@@ -1,12 +1,11 @@
-package com.weibo.model;
+package com.it.model;
 
 import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * 分页实体类
- * 用于封装分页数据
+ * 鍒嗛〉瀹炰綋绫? * 鐢ㄤ簬灏佽鍒嗛〉鏁版嵁
  */
 @Data
 public class Page<T> implements Serializable {
@@ -14,28 +13,25 @@ public class Page<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 总页数
-     */
+     * 鎬婚〉鏁?     */
     private Integer totalPage;
 
     /**
-     * 每页显示数量
+     * 姣忛〉鏄剧ず鏁伴噺
      */
     private Integer pageSize;
 
     /**
-     * 总记录数
+     * 鎬昏褰曟暟
      */
     private Integer totalCount;
 
     /**
-     * 当前页
-     */
+     * 褰撳墠椤?     */
     private Integer currentPage;
 
     /**
-     * 当前页数据集合
-     */
+     * 褰撳墠椤垫暟鎹泦鍚?     */
     private List<T> objects;
 
     public Page() {

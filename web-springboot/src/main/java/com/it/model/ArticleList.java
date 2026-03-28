@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 文章列表实体类
- * 用于文章列表展示
+ * 鏂囩珷鍒楄〃瀹炰綋绫? * 鐢ㄤ簬鏂囩珷鍒楄〃灞曠ず
  */
 @Data
 public class ArticleList implements Serializable {
@@ -15,78 +14,69 @@ public class ArticleList implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 文章ID
+     * 鏂囩珷ID
      */
     private Integer articleId;
 
     /**
-     * 文章标题
+     * 鏂囩珷鏍囬
      */
     private String title;
 
     /**
-     * 发表时间
+     * 鍙戣〃鏃堕棿
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishedTime;
 
     /**
-     * 文章分类名
-     */
+     * 鏂囩珷鍒嗙被鍚?     */
     private String tagName;
 
     /**
-     * 作者ID
+     * 浣滆€匢D
      */
     private Integer authorId;
 
     /**
-     * 作者头像
-     */
+     * 浣滆€呭ご鍍?     */
     private String authorImg;
 
     /**
-     * 作者昵称
-     */
+     * 浣滆€呮樀绉?     */
     private String authorNick;
 
     /**
-     * 转发数
-     */
+     * 杞彂鏁?     */
     private Integer shareNum;
 
     /**
-     * 点赞数
-     */
+     * 鐐硅禐鏁?     */
     private Integer starNum;
 
     /**
-     * 评论数
-     */
+     * 璇勮鏁?     */
     private Integer commentNum;
 
     /**
-     * 收藏数
-     */
+     * 鏀惰棌鏁?     */
     private Integer collectionNum;
 
     /**
-     * 文章内容预览
+     * 鏂囩珷鍐呭棰勮
      */
     private String content;
 
     /**
-     * 文章第一张图片
-     */
+     * 鏂囩珷绗竴寮犲浘鐗?     */
     private String firstImg;
 
     /**
-     * 是否置顶
+     * 鏄惁缃《
      */
     private Integer stick;
 
     /**
-     * 浏览量
-     */
+     * 娴忚閲?     */
     private Integer pageView;
 }
