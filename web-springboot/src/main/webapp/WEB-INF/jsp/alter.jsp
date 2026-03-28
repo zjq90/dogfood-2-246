@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<title>账号管理</title>
 	<link rel="icon" href="/static/image/icon/weibo_favicon.ico" type="image/x-icon">
+ <link rel="stylesheet" type="text/css" href="/static/css/common.css">
  <link rel="stylesheet" type="text/css" href="/static/css/my_page.css">
 	</head>
 		<body>

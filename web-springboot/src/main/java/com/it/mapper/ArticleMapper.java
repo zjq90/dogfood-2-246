@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.Article;
+import com.weibo.model.Article;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -132,4 +132,40 @@ public interface ArticleMapper {
      * @return 影响行数
      */
     int deleteArticleTags(@Param("articleId") Integer articleId);
+
+    /**
+     * 更新点赞数
+     * 
+     * @param articleId 文章ID
+     * @param increment 增量
+     * @return 影响行数
+     */
+    int updateStarNum(@Param("articleId") Integer articleId, @Param("increment") int increment);
+
+    /**
+     * 更新收藏数
+     * 
+     * @param articleId 文章ID
+     * @param increment 增量
+     * @return 影响行数
+     */
+    int updateCollectionNum(@Param("articleId") Integer articleId, @Param("increment") int increment);
+
+    /**
+     * 更新评论数
+     * 
+     * @param articleId 文章ID
+     * @param increment 增量
+     * @return 影响行数
+     */
+    int updateCommentNum(@Param("articleId") Integer articleId, @Param("increment") int increment);
+
+    /**
+     * 更新转发数
+     * 
+     * @param articleId 文章ID
+     * @param increment 增量
+     * @return 影响行数
+     */
+    int updateShareNum(@Param("articleId") Integer articleId, @Param("increment") int increment);
 }

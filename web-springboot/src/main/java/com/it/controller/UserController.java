@@ -1,7 +1,7 @@
 package com.weibo.controller;
 
 import com.weibo.dto.Result;
-import com.weibo.entity.User;
+import com.weibo.model.User;
 import com.weibo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

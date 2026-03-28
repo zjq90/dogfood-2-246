@@ -1,9 +1,9 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.ArticleCollection;
-import com.weibo.entity.ArticleComment;
-import com.weibo.entity.ArticleReply;
-import com.weibo.entity.ArticleStar;
+import com.weibo.model.ArticleCollection;
+import com.weibo.model.ArticleComment;
+import com.weibo.model.ArticleReply;
+import com.weibo.model.ArticleStar;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -159,4 +159,76 @@ public interface ArticleInteractionMapper {
      * @return 影响行数
      */
     int deleteCollection(@Param("collectionId") Integer collectionId);
+
+    /**
+     * 检查文章点赞状态
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 点赞记录数
+     */
+    int checkArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 插入文章点赞记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int insertArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 删除文章点赞记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int deleteArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 检查文章收藏状态
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 收藏记录数
+     */
+    int checkArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 插入文章收藏记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int insertArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 删除文章收藏记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int deleteArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 检查文章转发状态
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 转发记录数
+     */
+    int checkArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+
+    /**
+     * 插入文章转发记录
+     * 
+     * @param userId 用户ID
+     * @param articleId 文章ID
+     * @return 影响行数
+     */
+    int insertArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 }

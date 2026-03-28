@@ -2,7 +2,7 @@ package com.weibo.service;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Article;
+import com.weibo.model.Article;
 import java.util.List;
 
 /**
