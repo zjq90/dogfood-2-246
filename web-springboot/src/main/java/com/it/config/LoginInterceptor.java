@@ -1,4 +1,4 @@
-package com.weibo.config;
+package com.it.config;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;

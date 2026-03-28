@@ -1,9 +1,9 @@
-package com.weibo.mapper;
+package com.it.mapper;
 
-import com.weibo.entity.ArticleCollection;
-import com.weibo.entity.ArticleComment;
-import com.weibo.entity.ArticleReply;
-import com.weibo.entity.ArticleStar;
+import com.it.model.ArticleCollection;
+import com.it.model.ArticleComment;
+import com.it.model.ArticleReply;
+import com.it.model.ArticleStar;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -159,4 +159,46 @@ public interface ArticleInteractionMapper {
      * @return 影响行数
      */
     int deleteCollection(@Param("collectionId") Integer collectionId);
+    
+    // ==================== 简化方法 ====================
+    
+    /**
+     * 检查文章点赞记录
+     */
+    int checkArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 新增文章点赞（简化方法）
+     */
+    int insertArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 删除文章点赞（简化方法）
+     */
+    int deleteArticleStar(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 检查文章收藏记录
+     */
+    int checkArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 新增文章收藏（简化方法）
+     */
+    int insertArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 删除文章收藏（简化方法）
+     */
+    int deleteArticleCollection(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 检查文章转发记录
+     */
+    int checkArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
+    
+    /**
+     * 新增文章转发（简化方法）
+     */
+    int insertArticleShare(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 }

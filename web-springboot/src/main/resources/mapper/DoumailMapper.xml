@@ -1,64 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weibo.mapper.DoumailMapper">
+<mapper namespace="com.it.mapper.DoumailMapper">
 
-    <resultMap id="DoumailResultMap" type="com.weibo.model.Doumail">
+    <resultMap id="DoumailResultMap" type="com.it.model.Doumail">
         <id column="doumail_id" property="doumailId"/>
         <result column="from_user_id" property="fromUserId"/>
         <result column="to_user_id" property="toUserId"/>
-        <result column="chat_msg" property="chatMsg"/>
-        <result column="chat_time" property="chatTime"/>
+        <result column="content" property="content"/>
         <result column="status" property="status"/>
-        <result column="read" property="read"/>
+        <result column="is_read" property="isRead"/>
+        <result column="create_time" property="createTime"/>
     </resultMap>
 
-    <insert id="insert" parameterType="com.weibo.model.Doumail" useGeneratedKeys="true" keyProperty="doumailId">
-        INSERT INTO doumail (from_user_id, to_user_id, chat_msg, chat_time, status, `read`)
-        VALUES (#{fromUserId}, #{toUserId}, #{chatMsg}, NOW(), 0, 0)
-    </insert>
+    <sql id="Base_Column_List">
+        doumail_id, from_user_id, to_user_id, content, status, is_read, create_time
+    </sql>
 
-    <select id="selectByUsers" resultMap="DoumailResultMap">
-        SELECT d.doumail_id, d.from_user_id, d.to_user_id, d.chat_msg, d.chat_time, d.status, d.`read`,
-               u1.nickname as from_user_nick, u1.portrait as from_user_img,
-               u2.nickname as to_user_nick, u2.portrait as to_user_img
-        FROM doumail d
-        LEFT JOIN user u1 ON d.from_user_id = u1.user_id
-        LEFT JOIN user u2 ON d.to_user_id = u2.user_id
-        WHERE (d.from_user_id = #{userId} AND d.to_user_id = #{toUserId} AND d.status != 1)
-           OR (d.from_user_id = #{toUserId} AND d.to_user_id = #{userId} AND d.status != 2)
-        ORDER BY d.chat_time ASC
+    <select id="selectConversationList" resultMap="DoumailResultMap">
+        SELECT DISTINCT
+            CASE WHEN from_user_id = #{userId} THEN to_user_id ELSE from_user_id END as target_user_id,
+            MAX(doumail_id) as last_doumail_id
+        FROM doumail
+        WHERE (from_user_id = #{userId} AND status != 1)
+           OR (to_user_id = #{userId} AND status != 2)
+        GROUP BY target_user_id
+        ORDER BY last_doumail_id DESC
         LIMIT #{offset}, #{pageSize}
     </select>
 
-    <select id="selectCountByUsers" resultType="int">
-        SELECT COUNT(*) FROM doumail
-        WHERE (from_user_id = #{userId} AND to_user_id = #{toUserId} AND status != 1)
-           OR (from_user_id = #{toUserId} AND to_user_id = #{userId} AND status != 2)
+    <select id="selectDoumailDetail" resultMap="DoumailResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM doumail
+        WHERE ((from_user_id = #{userId} AND to_user_id = #{targetUserId} AND status != 1)
+           OR (from_user_id = #{targetUserId} AND to_user_id = #{userId} AND status != 2))
+        ORDER BY create_time DESC
+        LIMIT #{offset}, #{pageSize}
     </select>
 
-    <select id="selectContacts" resultMap="DoumailResultMap">
-        SELECT d.doumail_id, d.from_user_id, d.to_user_id, d.chat_msg, d.chat_time, d.`read`,
-               CASE WHEN d.from_user_id = #{userId} THEN u2.nickname ELSE u1.nickname END as contact_nick,
-               CASE WHEN d.from_user_id = #{userId} THEN u2.portrait ELSE u1.portrait END as contact_img,
-               CASE WHEN d.from_user_id = #{userId} THEN d.to_user_id ELSE d.from_user_id END as contact_id
-        FROM doumail d
-        LEFT JOIN user u1 ON d.from_user_id = u1.user_id
-        LEFT JOIN user u2 ON d.to_user_id = u2.user_id
-        WHERE (d.from_user_id = #{userId} AND d.status != 1)
-           OR (d.to_user_id = #{userId} AND d.status != 2)
-        ORDER BY d.chat_time DESC
-    </select>
+    <insert id="insertDoumail" parameterType="com.it.model.Doumail" useGeneratedKeys="true" keyProperty="doumailId">
+        INSERT INTO doumail (from_user_id, to_user_id, content, status, is_read, create_time)
+        VALUES (#{fromUserId}, #{toUserId}, #{content}, 0, 0, NOW())
+    </insert>
 
-    <update id="updateReadStatus">
-        UPDATE doumail SET `read` = 1 WHERE doumail_id = #{doumailId}
+    <update id="markAsRead">
+        UPDATE doumail 
+        SET is_read = 1 
+        WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId} AND is_read = 0
+    </update>
+
+    <update id="deleteDoumail">
+        UPDATE doumail 
+        SET status = #{status}
+        WHERE doumail_id = #{doumailId} 
+          AND ((from_user_id = #{userId} AND status = 1) 
+            OR (to_user_id = #{userId} AND status = 2))
     </update>
 
     <select id="selectUnreadCount" resultType="int">
-        SELECT COUNT(*) FROM doumail WHERE to_user_id = #{userId} AND `read` = 0 AND status != 2
+        SELECT COUNT(*) FROM doumail WHERE to_user_id = #{userId} AND is_read = 0 AND status != 2
     </select>
 
-    <delete id="delete">
-        DELETE FROM doumail WHERE doumail_id = #{doumailId}
+    <select id="selectConversationCount" resultType="long">
+        SELECT COUNT(DISTINCT 
+            CASE WHEN from_user_id = #{userId} THEN to_user_id ELSE from_user_id END
+        ) FROM doumail
+        WHERE (from_user_id = #{userId} AND status != 1)
+           OR (to_user_id = #{userId} AND status != 2)
+    </select>
+
+    <select id="selectDoumailCount" resultType="long">
+        SELECT COUNT(*) FROM doumail
+        WHERE ((from_user_id = #{userId} AND to_user_id = #{targetUserId} AND status != 1)
+           OR (from_user_id = #{targetUserId} AND to_user_id = #{userId} AND status != 2))
+    </select>
+
+    <!-- 兼容方法 -->
+    <select id="selectDoumailDetailCount" resultType="long">
+        SELECT COUNT(*) FROM doumail
+        WHERE ((from_user_id = #{userId} AND to_user_id = #{targetUserId} AND status != 1)
+           OR (from_user_id = #{targetUserId} AND to_user_id = #{userId} AND status != 2))
+    </select>
+
+    <update id="updateStatus">
+        UPDATE doumail 
+        SET status = #{status} 
+        WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM doumail WHERE doumail_id = #{doumailId} AND (from_user_id = #{userId} OR to_user_id = #{userId})
     </delete>
 
 </mapper>

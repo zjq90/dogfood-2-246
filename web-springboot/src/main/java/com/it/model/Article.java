@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -45,7 +45,7 @@ public class Article implements Serializable {
     private String authorImg;
 
     /**
-     * 发表时间
+     * 发布时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishedTime;
@@ -89,4 +89,49 @@ public class Article implements Serializable {
      * 是否置顶(0-否, 1-是)
      */
     private Integer stick;
+
+    // ==================== 兼容字段 ====================
+
+    /**
+     * 作者ID（兼容）
+     */
+    private Integer author;
+
+    /**
+     * 创建时间（兼容）
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createTime;
+
+    /**
+     * 更新时间（兼容）
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date updateTime;
+
+    /**
+     * 收藏计数（兼容）
+     */
+    private Integer collectCount;
+
+    /**
+     * 点赞计数（兼容）
+     */
+    private Integer starCount;
+
+    /**
+     * 评论计数（兼容）
+     */
+    private Integer commentCount;
+
+    /**
+     * 分享计数（兼容）
+     */
+    private Integer shareCount;
+
+    // ==================== 兼容方法 ====================
+
+    public Integer getUserId() {
+        return this.authorId;
+    }
 }

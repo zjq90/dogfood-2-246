@@ -1,7 +1,8 @@
-package com.weibo.model;
+package com.it.model;
 
 import lombok.Data;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 好友关系实体类
@@ -36,4 +37,21 @@ public class Friend implements Serializable {
      * 好友分组ID
      */
     private Integer groupId;
+
+    // ==================== 兼容字段 ====================
+
+    /**
+     * 用户ID（兼容）
+     */
+    private Integer userId;
+
+    /**
+     * 关注者ID（兼容）
+     */
+    private Integer followerId;
+
+    /**
+     * 创建时间（兼容）
+     */
+    private Date createTime;
 }

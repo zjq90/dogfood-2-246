@@ -1,10 +1,11 @@
-package com.weibo.service;
+package com.it.service;
 
-import com.weibo.mapper.ArticleCommentMapper;
-import com.weibo.mapper.ArticleInteractionMapper;
-import com.weibo.mapper.ArticleMapper;
-import com.weibo.model.ArticleComment;
-import com.weibo.model.ArticleReply;
+import com.it.common.Result;
+import com.it.mapper.ArticleCommentMapper;
+import com.it.mapper.ArticleInteractionMapper;
+import com.it.mapper.ArticleMapper;
+import com.it.model.ArticleComment;
+import com.it.model.ArticleReply;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

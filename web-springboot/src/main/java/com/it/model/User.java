@@ -1,4 +1,4 @@
-package com.weibo.model;
+package com.it.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 用户实体类
- * 对应数据库表: user
+ * 鐢ㄦ埛瀹炰綋绫? * 瀵瑰簲鏁版嵁搴撹〃: user
  */
 @Data
 public class User implements Serializable {
@@ -15,74 +14,73 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户ID
+     * 鐢ㄦ埛ID
      */
     private Integer userId;
 
     /**
-     * 用户名(邮箱)
+     * 鐢ㄦ埛鍚?閭)
      */
     private String username;
 
     /**
-     * 密码(MD5加密)
+     * 瀵嗙爜(MD5鍔犲瘑)
      */
     private String password;
 
     /**
-     * 用户权限(0-普通用户, 1-管理员)
+     * 鐢ㄦ埛鏉冮檺(0-鏅€氱敤鎴? 1-绠＄悊鍛?
      */
     private Integer status;
 
     /**
-     * 是否被举报(0-未举报, 1-被举报)
+     * 鏄惁琚妇鎶?0-鏈妇鎶? 1-琚妇鎶?
      */
     private Integer reported;
 
     /**
-     * 封号截止时间
+     * 灏佸彿鎴鏃堕棿
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date titleTime;
 
     /**
-     * 用户头像路径
+     * 鐢ㄦ埛澶村儚璺緞
      */
     private String portrait;
 
     /**
-     * 个性签名
-     */
+     * 涓€х鍚?     */
     private String signature;
 
     /**
-     * 自我介绍
+     * 鑷垜浠嬬粛
      */
     private String selfIntroduc;
 
     /**
-     * 昵称
+     * 鏄电О
      */
     private String nickname;
 
     /**
-     * 用户地址
+     * 鐢ㄦ埛鍦板潃
      */
     private String address;
 
     /**
-     * 用户注册时间
+     * 鐢ㄦ埛娉ㄥ唽鏃堕棿
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date time;
 
     /**
-     * 找回密码凭证(UUID)
+     * 鎵惧洖瀵嗙爜鍑瘉(UUID)
      */
     private Integer code;
 
     /**
-     * 找回密码时间限制
+     * 鎵惧洖瀵嗙爜鏃堕棿闄愬埗
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date outTime;

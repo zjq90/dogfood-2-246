@@ -1,6 +1,6 @@
-package com.weibo.mapper;
+package com.it.mapper;
 
-import com.weibo.entity.User;
+import com.it.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;

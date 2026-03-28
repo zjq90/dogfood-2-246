@@ -1,8 +1,8 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.dto.Result;
-import com.weibo.entity.User;
-import com.weibo.service.UserService;
+import com.it.common.Result;
+import com.it.model.User;
+import com.it.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,19 +56,25 @@ public class UserController {
     }
 
     /**
-     * 用户登录
+     * 用户登录（支持Ajax登录（表单提交）
      */
     @PostMapping("/login")
-    public String login(@RequestParam("uname") String username,
-                       @RequestParam("upwd") String password,
+    public String login(@RequestParam(value = "uname", required = false) String username,
+                       @RequestParam(value = "upwd", required = false) String password,
+                       @RequestParam(value = "username", required = false) String ajaxUsername,
+                       @RequestParam(value = "password", required = false) String ajaxPassword,
                        @RequestParam(value = "remember", required = false) String remember,
                        @RequestParam(value = "auto", required = false) String auto,
                        HttpServletRequest request,
                        HttpServletResponse response,
                        Model model) {
-        logger.info("用户登录请求，用户名：{}", username);
+        // 兼容两种参数名
+        String finalUsername = username != null ? username : ajaxUsername;
+        String finalPassword = password != null ? password : ajaxPassword;
+        
+        logger.info("用户登录请求，用户名：{}", finalUsername);
 
-        Result<User> result = userService.login(username, password);
+        Result<User> result = userService.login(finalUsername, finalPassword);
 
         if (result.isSuccess()) {
             User user = result.getData();
@@ -78,14 +84,14 @@ public class UserController {
             session.setAttribute("userId", user.getUserId());
 
             // 记住用户名
-            Cookie usernameCookie = new Cookie("uname", username);
+            Cookie usernameCookie = new Cookie("uname", finalUsername);
             usernameCookie.setMaxAge(7 * 24 * 60 * 60);
             usernameCookie.setPath("/");
             response.addCookie(usernameCookie);
 
             // 记住密码
             if (remember != null) {
-                Cookie passwordCookie = new Cookie("upwd", password);
+                Cookie passwordCookie = new Cookie("upwd", finalPassword);
                 passwordCookie.setMaxAge(7 * 24 * 60 * 60);
                 passwordCookie.setPath("/");
                 response.addCookie(passwordCookie);
@@ -104,12 +110,47 @@ public class UserController {
                 response.addCookie(autoCookie);
             }
 
-            logger.info("用户登录成功，用户名：{}", username);
+            logger.info("用户登录成功，用户名：{}", finalUsername);
+            
+            // 判断是否是Ajax请求
+            if (ajaxUsername != null) {
+                return "redirect:/page/home";
+            }
             return "redirect:/page/home";
         } else {
             model.addAttribute("errorMsg", result.getMessage());
             return "login";
         }
+    }
+
+    /**
+     * Ajax登录接口
+     */
+    @PostMapping("/api/login")
+    @ResponseBody
+    public Result<User> apiLogin(@RequestParam("username") String username,
+                                  @RequestParam("password") String password,
+                                  @RequestParam(value = "remember", required = false) String remember,
+                                  @RequestParam(value = "auto", required = false) String auto,
+                                  HttpServletRequest request,
+                                  HttpServletResponse response) {
+        logger.info("用户Ajax登录请求，用户名：{}", username);
+        Result<User> result = userService.login(username, password);
+        if (result.isSuccess()) {
+            User user = result.getData();
+            HttpSession session = request.getSession();
+            session.setAttribute("loginUser", user);
+            session.setAttribute("uname", user.getUsername());
+            session.setAttribute("userId", user.getUserId());
+
+            // 设置Cookie
+            Cookie usernameCookie = new Cookie("uname", username);
+            usernameCookie.setMaxAge(7 * 24 * 60 * 60);
+            usernameCookie.setPath("/");
+            response.addCookie(usernameCookie);
+            return result;
+        }
+        return result;
     }
 
     /**
@@ -235,11 +276,11 @@ public class UserController {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         if (userId == null) {
-            return Result.fail(401, "请先登录");
+            return Result.error(401, "请先登录");
         }
 
         if (file.isEmpty()) {
-            return Result.fail("请选择上传文件");
+            return Result.error("请选择上传文件");
         }
 
         try {
@@ -270,7 +311,7 @@ public class UserController {
             return Result.success("上传成功", data);
         } catch (IOException e) {
             logger.error("头像上传失败", e);
-            return Result.fail("上传失败：" + e.getMessage());
+            return Result.error("上传失败：" + e.getMessage());
         }
     }
 

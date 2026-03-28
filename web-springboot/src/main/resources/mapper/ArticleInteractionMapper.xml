@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weibo.mapper.ArticleInteractionMapper">
+<mapper namespace="com.it.mapper.ArticleInteractionMapper">
 
+    <resultMap id="CommentResultMap" type="com.it.model.ArticleComment">
+        <id column="comment_id" property="commentId"/>
+        <result column="article_id" property="articleId"/>
+        <result column="user_id" property="userId"/>
+        <result column="content" property="content"/>
+        <result column="star_num" property="starNum"/>
+        <result column="create_time" property="createTime"/>
+        <result column="c_msg" property="comMsg"/>
+        <result column="userComId" property="userComId"/>
+        <result column="comStar" property="comStar"/>
+        <result column="comTime" property="comTime"/>
+    </resultMap>
+
+    <resultMap id="ReplyResultMap" type="com.it.model.ArticleReply">
+        <id column="reply_id" property="replyId"/>
+        <result column="comment_id" property="commentId"/>
+        <result column="from_user_id" property="fromUserId"/>
+        <result column="to_user_id" property="toUserId"/>
+        <result column="content" property="content"/>
+        <result column="star_num" property="starNum"/>
+        <result column="create_time" property="createTime"/>
+        <result column="replyMsg" property="replyMsg"/>
+        <result column="userReplyFromId" property="userReplyFromId"/>
+        <result column="userReplyToId" property="userReplyToId"/>
+        <result column="replyStar" property="replyStar"/>
+        <result column="replyTime" property="replyTime"/>
+    </resultMap>
+
+    <resultMap id="StarResultMap" type="com.it.model.ArticleStar">
+        <id column="star_id" property="starId"/>
+        <result column="user_id" property="userId"/>
+        <result column="type_id" property="typeId"/>
+        <result column="type" property="type"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <resultMap id="CollectionResultMap" type="com.it.model.ArticleCollection">
+        <id column="collection_id" property="collectionId"/>
+        <result column="user_id" property="userId"/>
+        <result column="article_id" property="articleId"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <sql id="Comment_Column_List">
+        comment_id, article_id, user_id, content, star_num, create_time
+    </sql>
+
+    <!-- 评论相关 -->
+    <select id="selectCommentList" resultMap="CommentResultMap">
+        SELECT <include refid="Comment_Column_List"/>
+        FROM a_comment
+        WHERE article_id = #{articleId}
+        ORDER BY create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectCommentCount" resultType="long">
+        SELECT COUNT(*) FROM a_comment WHERE article_id = #{articleId}
+    </select>
+
+    <insert id="insertComment" parameterType="com.it.model.ArticleComment" useGeneratedKeys="true" keyProperty="commentId">
+        INSERT INTO a_comment (article_id, user_id, content, star_num, create_time)
+        VALUES (#{articleId}, #{userId}, #{content}, 0, NOW())
+    </insert>
+
+    <delete id="deleteComment">
+        DELETE FROM a_comment WHERE comment_id = #{commentId} AND user_id = #{userId}
+    </delete>
+
+    <!-- 回复相关 -->
+    <select id="selectReplyList" resultMap="ReplyResultMap">
+        SELECT reply_id, comment_id, from_user_id, to_user_id, content, star_num, create_time
+        FROM a_reply
+        WHERE comment_id = #{commentId}
+        ORDER BY create_time ASC
+    </select>
+
+    <insert id="insertReply" parameterType="com.it.model.ArticleReply" useGeneratedKeys="true" keyProperty="replyId">
+        INSERT INTO a_reply (comment_id, from_user_id, to_user_id, content, star_num, create_time)
+        VALUES (#{commentId}, #{fromUserId}, #{toUserId}, #{content}, 0, NOW())
+    </insert>
+
+    <delete id="deleteReply">
+        DELETE FROM a_reply WHERE reply_id = #{replyId} AND from_user_id = #{userId}
+    </delete>
+
+    <!-- 点赞相关 -->
+    <select id="selectStar" resultMap="StarResultMap">
+        SELECT star_id, user_id, type_id, type, create_time
+        FROM a_star
+        WHERE user_id = #{userId} AND type_id = #{typeId} AND type = #{type}
+    </select>
+
+    <insert id="insertStar" parameterType="com.it.model.ArticleStar" useGeneratedKeys="true" keyProperty="starId">
+        INSERT INTO a_star (user_id, type_id, type, create_time)
+        VALUES (#{userId}, #{typeId}, #{type}, NOW())
+    </insert>
+
+    <delete id="deleteStar">
+        DELETE FROM a_star WHERE star_id = #{starId}
+    </delete>
+
+    <!-- 收藏相关 -->
+    <select id="selectCollectionList" resultMap="CollectionResultMap">
+        SELECT collection_id, user_id, article_id, create_time
+        FROM a_collection
+        WHERE user_id = #{userId}
+        ORDER BY create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectCollectionCount" resultType="long">
+        SELECT COUNT(*) FROM a_collection WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectCollection" resultMap="CollectionResultMap">
+        SELECT collection_id, user_id, article_id, create_time
+        FROM a_collection
+        WHERE user_id = #{userId} AND article_id = #{articleId}
+    </select>
+
+    <insert id="insertCollection" parameterType="com.it.model.ArticleCollection" useGeneratedKeys="true" keyProperty="collectionId">
+        INSERT INTO a_collection (user_id, article_id, create_time)
+        VALUES (#{userId}, #{articleId}, NOW())
+    </insert>
+
+    <delete id="deleteCollection">
+        DELETE FROM a_collection WHERE collection_id = #{collectionId}
+    </delete>
+
+    <!-- 简化方法 -->
     <select id="checkArticleStar" resultType="int">
         SELECT COUNT(*) FROM a_star WHERE user_id = #{userId} AND type_id = #{articleId} AND type = 1
     </select>
 
     <insert id="insertArticleStar">
-        INSERT INTO a_star (type_id, type, user_id) VALUES (#{articleId}, 1, #{userId})
+        INSERT INTO a_star (user_id, type_id, type, create_time)
+        VALUES (#{userId}, #{articleId}, 1, NOW())
     </insert>
 
     <delete id="deleteArticleStar">
@@ -19,7 +151,8 @@
     </select>
 
     <insert id="insertArticleCollection">
-        INSERT INTO a_collection (user_id, article_id) VALUES (#{userId}, #{articleId})
+        INSERT INTO a_collection (user_id, article_id, create_time)
+        VALUES (#{userId}, #{articleId}, NOW())
     </insert>
 
     <delete id="deleteArticleCollection">
@@ -31,7 +164,8 @@
     </select>
 
     <insert id="insertArticleShare">
-        INSERT INTO a_share (user_id, article_id) VALUES (#{userId}, #{articleId})
+        INSERT INTO a_share (user_id, article_id, create_time)
+        VALUES (#{userId}, #{articleId}, NOW())
     </insert>
 
 </mapper>

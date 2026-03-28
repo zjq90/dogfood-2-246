@@ -1,7 +1,7 @@
-package com.weibo.controller;
+package com.it.controller;
 
-import com.weibo.common.Result;
-import com.weibo.model.User;
+import com.it.common.Result;
+import com.it.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;

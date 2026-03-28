@@ -1,4 +1,4 @@
-package com.weibo.common;
+package com.it.common;
 
 import lombok.Data;
 import java.io.Serializable;
@@ -57,5 +57,12 @@ public class Result<T> implements Serializable {
 
     public boolean isSuccess() {
         return this.code != null && this.code == 200;
+    }
+    
+    /**
+     * 兼容getMessage()调用
+     */
+    public String getMessage() {
+        return this.msg;
     }
 }

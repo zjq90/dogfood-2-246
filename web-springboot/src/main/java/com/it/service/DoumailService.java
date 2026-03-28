@@ -1,8 +1,8 @@
-package com.weibo.service;
+package com.it.service;
 
-import com.weibo.dto.PageResult;
-import com.weibo.dto.Result;
-import com.weibo.entity.Doumail;
+import com.it.common.PageResult;
+import com.it.common.Result;
+import com.it.model.Doumail;
 
 /**
  * 豆邮服务接口

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.weibo.mapper.FriendMapper">
+<mapper namespace="com.it.mapper.FriendMapper">
 
-    <resultMap id="FriendResultMap" type="com.weibo.model.Friend">
+    <resultMap id="FriendResultMap" type="com.it.model.Friend">
         <id column="friend_id" property="friendId"/>
+        <result column="user_id" property="userId"/>
+        <result column="follower_id" property="followerId"/>
         <result column="from_user_id" property="fromUserId"/>
         <result column="to_user_id" property="toUserId"/>
         <result column="status" property="status"/>
         <result column="group_id" property="groupId"/>
+        <result column="create_time" property="createTime"/>
     </resultMap>
 
-    <resultMap id="UserResultMap" type="com.weibo.model.User">
+    <resultMap id="UserResultMap" type="com.it.model.User">
         <id column="user_id" property="userId"/>
         <result column="username" property="username"/>
         <result column="portrait" property="portrait"/>
@@ -19,59 +22,111 @@
         <result column="address" property="address"/>
     </resultMap>
 
-    <insert id="insert" parameterType="com.weibo.model.Friend">
-        INSERT INTO friend (from_user_id, to_user_id, status, group_id)
-        VALUES (#{fromUserId}, #{toUserId}, #{status}, #{groupId})
+    <sql id="Base_Column_List">
+        friend_id, user_id, follower_id, from_user_id, to_user_id, status, group_id, create_time
+    </sql>
+
+    <select id="selectFollowingList" resultMap="UserResultMap">
+        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
+        FROM user u
+        INNER JOIN friend f ON u.user_id = f.to_user_id
+        WHERE f.from_user_id = #{userId} AND f.status = 0
+        ORDER BY f.create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectFollowerList" resultMap="UserResultMap">
+        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
+        FROM user u
+        INNER JOIN friend f ON u.user_id = f.from_user_id
+        WHERE f.to_user_id = #{userId} AND f.status = 0
+        ORDER BY f.create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectFriendList" resultMap="UserResultMap">
+        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
+        FROM user u
+        INNER JOIN friend f ON u.user_id = f.to_user_id
+        WHERE f.from_user_id = #{userId} AND f.status = 0
+          AND EXISTS (SELECT 1 FROM friend f2 WHERE f2.from_user_id = f.to_user_id AND f2.to_user_id = #{userId} AND f2.status = 0)
+        ORDER BY f.create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectBlacklist" resultMap="UserResultMap">
+        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
+        FROM user u
+        INNER JOIN friend f ON u.user_id = f.to_user_id
+        WHERE f.from_user_id = #{userId} AND f.status = 1
+        ORDER BY f.create_time DESC
+    </select>
+
+    <select id="selectRelation" resultMap="FriendResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM friend 
+        WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
+    </select>
+
+    <insert id="insertFriend" parameterType="com.it.model.Friend" useGeneratedKeys="true" keyProperty="friendId">
+        INSERT INTO friend (from_user_id, to_user_id, status, group_id, create_time)
+        VALUES (#{fromUserId}, #{toUserId}, 0, 0, NOW())
     </insert>
 
-    <update id="updateStatus">
-        UPDATE friend SET status = #{status} 
+    <update id="updateFriendStatus" parameterType="com.it.model.Friend">
+        UPDATE friend 
+        SET status = #{status} 
         WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
     </update>
 
-    <delete id="delete">
-        DELETE FROM friend WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
+    <delete id="deleteFriend">
+        DELETE FROM friend 
+        WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
     </delete>
 
-    <select id="selectRelation" resultMap="FriendResultMap">
-        SELECT * FROM friend WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
+    <select id="selectFollowingCount" resultType="int">
+        SELECT COUNT(*) FROM friend WHERE from_user_id = #{userId} AND status = 0
     </select>
 
-    <select id="selectFriendsByPage" resultMap="UserResultMap">
-        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
-        FROM user u
-        INNER JOIN friend f ON u.user_id = f.to_user_id
-        WHERE f.from_user_id = #{userId} AND f.status = #{status}
-        ORDER BY f.friend_id DESC
-        LIMIT #{offset}, #{pageSize}
+    <select id="selectFollowerCount" resultType="int">
+        SELECT COUNT(*) FROM friend WHERE to_user_id = #{userId} AND status = 0
     </select>
 
     <select id="selectFriendCount" resultType="int">
-        SELECT COUNT(*) FROM friend WHERE from_user_id = #{userId} AND status = #{status}
+        SELECT COUNT(*) FROM friend f
+        WHERE f.from_user_id = #{userId} AND f.status = 0
+          AND EXISTS (SELECT 1 FROM friend f2 WHERE f2.from_user_id = f.to_user_id AND f2.to_user_id = #{userId} AND f2.status = 0)
     </select>
 
-    <select id="selectSearchFriendsByPage" resultMap="UserResultMap">
-        SELECT u.user_id, u.username, u.portrait, u.nickname, u.signature, u.address
-        FROM user u
-        INNER JOIN friend f ON u.user_id = f.to_user_id
-        WHERE f.from_user_id = #{userId} AND f.status = #{status}
-          AND (u.nickname LIKE CONCAT('%', #{searchContent}, '%') OR u.username LIKE CONCAT('%', #{searchContent}, '%'))
-        ORDER BY f.friend_id DESC
-        LIMIT #{offset}, #{pageSize}
+    <select id="checkIsFollowing" resultType="int">
+        SELECT COUNT(*) FROM friend 
+        WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId} AND status = 0
     </select>
 
-    <select id="selectSearchFriendCount" resultType="int">
-        SELECT COUNT(*)
-        FROM friend f
-        INNER JOIN user u ON f.to_user_id = u.user_id
-        WHERE f.from_user_id = #{userId} AND f.status = #{status}
-          AND (u.nickname LIKE CONCAT('%', #{searchContent}, '%') OR u.username LIKE CONCAT('%', #{searchContent}, '%'))
+    <!-- 兼容方法 -->
+    <insert id="insertFollow" parameterType="com.it.model.Friend" useGeneratedKeys="true" keyProperty="friendId">
+        INSERT INTO friend (user_id, follower_id, status, create_time)
+        VALUES (#{userId}, #{followerId}, 0, NOW())
+    </insert>
+
+    <update id="updateStatus" parameterType="com.it.model.Friend">
+        UPDATE friend 
+        SET status = #{status} 
+        WHERE user_id = #{userId} AND follower_id = #{followerId}
+    </update>
+
+    <delete id="deleteFollow">
+        DELETE FROM friend 
+        WHERE user_id = #{userId} AND follower_id = #{followerId}
+    </delete>
+
+    <select id="selectFollowExists" resultMap="FriendResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM friend 
+        WHERE user_id = #{userId} AND follower_id = #{followerId}
     </select>
 
-    <select id="checkFollow" resultType="int">
-        SELECT COUNT(*) FROM friend WHERE from_user_id = #{fromUserId} AND to_user_id = #{toUserId}
-    </select>
-
+    <!-- 分组相关 -->
     <insert id="insertGroup">
         INSERT INTO friend_group (group_name_to, user_id) VALUES (#{groupName}, #{userId})
     </insert>
@@ -96,10 +151,6 @@
         WHERE f.from_user_id = #{userId} AND f.group_id = #{groupId}
         ORDER BY f.friend_id DESC
         LIMIT #{offset}, #{pageSize}
-    </select>
-
-    <select id="selectFriendCountByGroup" resultType="int">
-        SELECT COUNT(*) FROM friend WHERE from_user_id = #{userId} AND group_id = #{groupId}
     </select>
 
 </mapper>
