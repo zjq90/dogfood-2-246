@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.weibo.mapper.UserMapper">
 
+    <!-- 用户结果映射 -->
     <resultMap id="BaseResultMap" type="com.weibo.model.User">
         <id column="user_id" property="userId"/>
         <result column="username" property="username"/>
@@ -19,34 +20,40 @@
         <result column="out_time" property="outTime"/>
     </resultMap>
 
+    <!-- 基础列列表 -->
     <sql id="Base_Column_List">
         user_id, username, password, status, reported, title_time, portrait, 
         signature, self_introduction, nickname, address, time, code, out_time
     </sql>
 
+    <!-- 用户登录验证 -->
     <select id="login" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
         WHERE username = #{username} AND password = #{password}
     </select>
 
+    <!-- 根据用户ID查询用户 -->
     <select id="selectByUserId" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
         WHERE user_id = #{userId}
     </select>
 
+    <!-- 根据用户名查询用户 -->
     <select id="selectByUsername" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
         WHERE username = #{username}
     </select>
 
+    <!-- 新增用户 -->
     <insert id="insert" parameterType="com.weibo.model.User" useGeneratedKeys="true" keyProperty="userId">
         INSERT INTO user (username, password, status, reported, portrait, nickname, time)
         VALUES (#{username}, #{password}, #{status}, #{reported}, #{portrait}, #{nickname}, NOW())
     </insert>
 
+    <!-- 更新用户信息 -->
     <update id="update" parameterType="com.weibo.model.User">
         UPDATE user
         <set>
@@ -59,14 +66,17 @@
         WHERE user_id = #{userId}
     </update>
 
+    <!-- 更新用户头像 -->
     <update id="updatePortrait">
         UPDATE user SET portrait = #{portrait} WHERE user_id = #{userId}
     </update>
 
+    <!-- 更新用户密码 -->
     <update id="updatePassword">
         UPDATE user SET password = #{password} WHERE user_id = #{userId}
     </update>
 
+    <!-- 分页查询用户列表 -->
     <select id="selectByPage" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
@@ -74,16 +84,19 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <!-- 查询用户总数 -->
     <select id="selectCount" resultType="int">
         SELECT COUNT(*) FROM user
     </select>
 
+    <!-- 搜索用户总数 -->
     <select id="selectSearchCount" resultType="int">
         SELECT COUNT(*) FROM user
         WHERE nickname LIKE CONCAT('%', #{searchContent}, '%')
            OR username LIKE CONCAT('%', #{searchContent}, '%')
     </select>
 
+    <!-- 搜索用户（分页） -->
     <select id="selectSearchByPage" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List"/>
         FROM user
@@ -93,8 +106,60 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <!-- 检查用户名是否存在 -->
     <select id="checkUsername" resultType="int">
         SELECT COUNT(*) FROM user WHERE username = #{username}
     </select>
+
+    <!-- 根据验证码查询用户 -->
+    <select id="selectByCode" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM user
+        WHERE code = #{code}
+    </select>
+
+    <!-- 更新验证码和过期时间 -->
+    <update id="updateCodeAndOutTime" parameterType="com.weibo.model.User">
+        UPDATE user SET code = #{code}, out_time = #{outTime}
+        WHERE user_id = #{userId}
+    </update>
+
+    <!-- 更新用户个人信息 -->
+    <update id="updatePersonage" parameterType="com.weibo.model.User">
+        UPDATE user
+        <set>
+            <if test="nickname != null">nickname = #{nickname},</if>
+            <if test="signature != null">signature = #{signature},</if>
+            <if test="selfIntroduc != null">self_introduction = #{selfIntroduc},</if>
+            <if test="address != null">address = #{address},</if>
+        </set>
+        WHERE user_id = #{userId}
+    </update>
+
+    <!-- 查询所有用户 -->
+    <select id="selectAllUsers" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM user
+        ORDER BY user_id DESC
+    </select>
+
+    <!-- 搜索用户 -->
+    <select id="searchUsers" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/>
+        FROM user
+        WHERE nickname LIKE CONCAT('%', #{keyword}, '%')
+           OR username LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY user_id DESC
+    </select>
+
+    <!-- 更新用户状态 -->
+    <update id="updateStatus">
+        UPDATE user SET status = #{status} WHERE user_id = #{userId}
+    </update>
+
+    <!-- 更新用户举报状态 -->
+    <update id="updateReported">
+        UPDATE user SET reported = #{reported} WHERE user_id = #{userId}
+    </update>
 
 </mapper>
