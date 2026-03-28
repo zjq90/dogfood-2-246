@@ -89,4 +89,44 @@ public class Article implements Serializable {
      * 是否置顶(0-否, 1-是)
      */
     private Integer stick;
+
+    /**
+     * 作者ID（与authorId相同，用于兼容）
+     */
+    private Integer author;
+
+    /**
+     * 用户ID（与authorId相同，用于兼容）
+     */
+    private Integer userId;
+
+    /**
+     * 点赞数（与starNum相同，用于兼容）
+     */
+    private Integer star;
+
+    /**
+     * 收藏数（与collectionNum相同，用于兼容）
+     */
+    private Integer collection;
+
+    /**
+     * 评论数（与commentNum相同，用于兼容）
+     */
+    private Integer comment;
+
+    /**
+     * 转发数（与shareNum相同，用于兼容）
+     */
+    private Integer share;
+
+    /**
+     * 是否已点赞
+     */
+    private Boolean hasStarred;
+
+    /**
+     * 是否已收藏
+     */
+    private Boolean hasCollected;
 }

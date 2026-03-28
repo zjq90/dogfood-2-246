@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>登录豆瓣</title>
 <link rel="icon" href="/static/image/icon/weibo_favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/static/css/common.css">
 
 <style type="text/css">
 body {
@@ -72,7 +73,7 @@ body {
 }
 
 #uname,#upwd{
-    background-color: ;
+    background-color: #fff;
     padding-left: 10px;
 
 }
@@ -142,10 +143,10 @@ body {
 		<div ><h1 id="header_h1">登录豆瓣</h1>
 		    </div>
 	<div id="name" class="login_level">
-	   <input type="text" id="uname" name="username" placeholder="请输入用户名">
+	   <input type="text" id="uname" name="uname" placeholder="请输入用户名">
 	 </div>
 	 <div id="pwd" class="login_level">  
-	   <input type="password" id="upwd" name="password" placeholder="请输入密码" > 
+	   <input type="password" id="upwd" name="upwd" placeholder="请输入密码" > 
 	 </div>
 	 
 	 <div  id="select"> 
@@ -183,12 +184,12 @@ body {
             return;
         }
         
-        fetch('/api/user/login', {
+        fetch('/user/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
+            body: 'uname=' + encodeURIComponent(username) + '&upwd=' + encodeURIComponent(password)
         })
         .then(response => response.json())
         .then(data => {

@@ -2,7 +2,7 @@ package com.weibo.service;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Doumail;
+import com.weibo.model.Doumail;
 
 /**
  * 豆邮服务接口

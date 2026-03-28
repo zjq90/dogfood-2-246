@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.Friend;
+import com.weibo.model.Friend;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;

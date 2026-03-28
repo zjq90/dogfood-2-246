@@ -1,6 +1,6 @@
 package com.weibo.controller;
 
-import com.weibo.common.Result;
+import com.weibo.dto.Result;
 import com.weibo.model.ArticleComment;
 import com.weibo.model.ArticleReply;
 import com.weibo.model.User;

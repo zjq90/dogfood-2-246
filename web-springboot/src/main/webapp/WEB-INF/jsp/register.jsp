@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>注册</title>
 <link rel="icon" href="/static/image/icon/weibo_favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/static/css/common.css">
 </head>
 <style type="text/css">
  body{

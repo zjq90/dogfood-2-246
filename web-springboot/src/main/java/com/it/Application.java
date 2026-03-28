@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @MapperScan("com.weibo.mapper")
 @EnableTransactionManagement
-public class weiboApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(weiboApplication.class, args);
+        SpringApplication.run(Application.class, args);
         System.out.println("======================================");
         System.out.println("   weibo Spring Boot 应用启动成功!   ");
         System.out.println("   访问地址: http://localhost:8080     ");

@@ -2,7 +2,7 @@ package com.weibo.controller;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Article;
+import com.weibo.model.Article;
 import com.weibo.service.ArticleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 文章控制器
@@ -64,7 +65,7 @@ public class ArticleController {
             String[] tagIdArray = tagIdsStr.split(",");
             tagIds = Arrays.stream(tagIdArray)
                            .map(Integer::parseInt)
-                           .toList();
+                           .collect(Collectors.toList());
         }
 
         Result<Article> result = articleService.publishArticle(article, tagIds);
@@ -98,7 +99,7 @@ public class ArticleController {
             String[] tagIdArray = tagIdsStr.split(",");
             tagIds = Arrays.stream(tagIdArray)
                            .map(Integer::parseInt)
-                           .toList();
+                           .collect(Collectors.toList());
         }
 
         Result<Article> result = articleService.updateArticle(article, tagIds);

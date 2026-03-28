@@ -2,8 +2,8 @@ package com.weibo.controller;
 
 import com.weibo.dto.PageResult;
 import com.weibo.dto.Result;
-import com.weibo.entity.Article;
-import com.weibo.entity.User;
+import com.weibo.model.Article;
+import com.weibo.model.User;
 import com.weibo.service.ArticleService;
 import com.weibo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

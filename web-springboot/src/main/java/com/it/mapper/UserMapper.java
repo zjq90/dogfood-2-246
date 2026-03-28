@@ -1,6 +1,6 @@
 package com.weibo.mapper;
 
-import com.weibo.entity.User;
+import com.weibo.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -128,4 +128,27 @@ public interface UserMapper {
      * @return 影响行数
      */
     int updateReported(@Param("userId") Integer userId, @Param("reported") Integer reported);
+
+    /**
+     * 插入用户（用于Service层调用）
+     * 
+     * @param user 用户对象
+     * @return 影响行数
+     */
+    int insert(User user);
+
+    /**
+     * 查询所有用户
+     * 
+     * @return 用户列表
+     */
+    List<User> selectAll();
+
+    /**
+     * 根据关键词搜索用户
+     * 
+     * @param keyword 关键词
+     * @return 用户列表
+     */
+    List<User> searchByKeyword(@Param("keyword") String keyword);
 }
